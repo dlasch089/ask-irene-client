@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
 
 // Routes
 const routes: Routes = [
+  {path:'', redirectTo: '/form', pathMatch: 'full'},
   {path: 'user', component: PageUserComponent},
   {path: 'spot', component: PageSpotComponent},
   {path: 'form', component: PageFormComponent}

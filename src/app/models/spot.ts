@@ -1,9 +1,11 @@
 // names/keys taken from google spreadsheet
+import { Selectables } from './select';
+
 export class Spot {
   id: string;
   name: string;
   district: string;
-  category: Array<string>;
+  categories: Selectables[];
   situation: string;
   price: string;
   vibe: string;
