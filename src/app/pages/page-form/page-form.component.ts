@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Spot } from '../../models/spot';
+import { Selectables } from '../../models/select';
 
 @Component({
   selector: 'app-page-form',
@@ -10,6 +11,8 @@ import { Spot } from '../../models/spot';
 export class PageFormComponent implements OnInit {
 
   spot: Spot;
+  categories = null;
+  options = null;
 
   constructor() { }
 

@@ -12,8 +12,8 @@ import { PageUserComponent } from './pages/page-user/page-user.component';
 import { PageSpotComponent } from './pages/page-spot/page-spot.component';
 import { PageFormComponent } from './pages/page-form/page-form.component';
 
-
 // Components
+import { FormSelectComponent } from './components/form-select/form-select.component';
 
 
 import { AppComponent } from './app.component';
@@ -31,6 +31,7 @@ const routes: Routes = [
     PageUserComponent,
     PageSpotComponent,
     PageFormComponent,
+    FormSelectComponent,
   ],
   imports: [
     BrowserModule,
