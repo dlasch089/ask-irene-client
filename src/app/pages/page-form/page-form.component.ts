@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Spot } from '../../models/spot';
 import { Selectables } from '../../models/select';
+
+import { SpotService } from '../../services/spot.service';
 
 @Component({
   selector: 'app-page-form',
@@ -10,6 +13,7 @@ import { Selectables } from '../../models/select';
 })
 export class PageFormComponent implements OnInit {
 
+  spots: Spot[];
   spot: Spot;
   categories = [
     'Cocktails',
@@ -47,11 +51,14 @@ export class PageFormComponent implements OnInit {
   processing = false;
   feedbackEnabled = false;
 
-  constructor() { }
+  constructor(private spotService: SpotService, private router: Router) { }
 
   ngOnInit() {
     this.spot = new Spot();
     this.spot.categories = [];
+
+    this.spotService.getAllSpots()
+      .subscribe((data) => this.spots = data);
   }
 
   handleCategoryChange(category) {
@@ -60,7 +67,7 @@ export class PageFormComponent implements OnInit {
   }
 
   submitForm(theForm) {
-    console.log(theForm);
+    this.spotService.addSpot(theForm);
   }
 
 }

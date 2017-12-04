@@ -2,6 +2,10 @@
   page-form works!
 </p>
 
+<li *ngFor="let spot of spots">
+{{spots.name | json}}
+</li>
+
 <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
   
     <div class="field">
@@ -40,9 +44,10 @@
       <textarea name="description" [(ngModel)]="spot.description" #myUsername="ngModel" id="description" cols="30" rows="10"></textarea>
     </div>
     
+    
   
     <div class="field submit">
-      <button type="submit" [disabled]="processing">Login</button>
+      <button type="submit" [disabled]="processing">Create Spot</button>
       <div *ngIf="feedbackEnabled && myForm.invalid">
         <p class="validation">there are errors in the form, please review the fields</p>
       </div>
