@@ -1,5 +1,9 @@
 #User stories
 
+## TO-DO
+
+- make the google maps api-key in a config-file
+
 ## Search and filter
 
 ### as a PUBLIC user I can 

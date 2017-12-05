@@ -1,19 +1,19 @@
 <p>
   page-form works!
 </p>
-
+<!-- 
 <ul *ngIf="spots">
   <li *ngFor="let spot of spots">
     {{spot.name}}
   </li>
-</ul>
+</ul> -->
 
 <form (ngSubmit)="submitForm()" #myForm="ngForm" *ngIf="formReady" novalidate>
-  
+
     <div class="field">
-      <label>Name of restaraunt</label>
-      <input type="text" name="name" [(ngModel)]="spot.name"/>
-    </div>
+        <label>Location</label>
+        <app-map-auto-complete (onSelect)="handleLocationSelect($event)"></app-map-auto-complete>
+      </div>
 
     <div class="field">
       <label>District</label>
@@ -43,7 +43,8 @@
     <div class="field">
       <label>description</label>
       <textarea name="description" [(ngModel)]="spot.description" #myUsername="ngModel" id="description" cols="30" rows="10"></textarea>
-    </div>
+    </div> -->
+
   
     <div class="field submit">
       <button type="submit" [disabled]="processing">Create Spot</button>

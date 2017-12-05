@@ -12,5 +12,5 @@ export class Spot {
   images: Array<string>;
   description: string;
   links: Array<string>; // 1. web, 2. facebook, 3. google maps, 4. instagram
-  location: Array<number>; // object containing lat, long like mongoose likes it? or just array of lat, lng?
+  location: Object; // object containing lat, long like mongoose likes it? or just array of lat, lng?
 }

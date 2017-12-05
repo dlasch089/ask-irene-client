@@ -44,16 +44,18 @@ export class PageFormComponent implements OnInit {
   handleCategoryChange(value) {
     this.spot.categories = value;
     this.spot.district = value;
-    console.log('Categories: '+ this.spot.categories, 'District:' + this.spot.district);
+    console.log('Categories: ' + this.spot.categories, 'District:' + this.spot.district);
   }
 
-  // handleDistrictChange(value) {
-
-  //   console.log(value);
-  // }
+  handleLocationSelect(informationArray) {
+    this.spot.name = informationArray[0];
+    this.spot.location = {
+      type: 'Point',
+      coordinates: [informationArray[1].lat(), informationArray[1].lat()]
+    };
+  }
 
   submitForm() {
     this.spotService.addSpot(this.spot);
   }
-
 }

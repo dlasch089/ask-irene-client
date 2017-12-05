@@ -2,8 +2,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 
 // Services
 import { SpotService } from './services/spot.service';
@@ -20,6 +21,7 @@ import { FormSelectComponent } from './components/form-select/form-select.compon
 
 
 import { AppComponent } from './app.component';
+import { MapAutoCompleteComponent } from './components/map-auto-complete/map-auto-complete.component';
 
 // Routes
 const routes: Routes = [
@@ -36,12 +38,18 @@ const routes: Routes = [
     PageSpotComponent,
     PageFormComponent,
     FormSelectComponent,
+    MapAutoCompleteComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCw7VtAVg6y_TSdQcFVB_dbcnnS15Vp4u0',
+      libraries: ['places']
+    }),
+    ReactiveFormsModule
   ],
   providers: [
     SpotService,
