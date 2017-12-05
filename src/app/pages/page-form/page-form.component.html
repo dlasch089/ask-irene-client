@@ -1,19 +1,19 @@
 <p>
   page-form works!
 </p>
-
+<!-- 
 <ul *ngIf="spots">
   <li *ngFor="let spot of spots">
     {{spot.name}}
   </li>
-</ul>
+</ul> -->
 
 <form (ngSubmit)="submitForm()" #myForm="ngForm" *ngIf="formReady" novalidate>
-  
+
     <div class="field">
-      <label>Name of restaraunt</label>
-      <input type="text" name="name" [(ngModel)]="spot.name"/>
-    </div>
+        <label>Location</label>
+        <app-map-auto-complete (onSelect)="handleLocationSelect($event)"></app-map-auto-complete>
+      </div>
 
     <div class="field">
       <label>District</label>

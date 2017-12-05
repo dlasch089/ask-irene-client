@@ -75,13 +75,15 @@ export class PageFormComponent implements OnInit {
     this.spot.images.push(value);
   }
 
-  // handleDistrictChange(value) {
-
-  //   console.log(value);
-  // }
+  handleLocationSelect(informationArray) {
+    this.spot.name = informationArray[0];
+    this.spot.location = {
+      type: 'Point',
+      coordinates: [informationArray[1].lat(), informationArray[1].lat()]
+    };
+  }
 
   submitForm() {
     this.spotService.addSpot(this.spot);
   }
-
 }
