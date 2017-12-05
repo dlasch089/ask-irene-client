@@ -10,11 +10,7 @@
   
     <div class="field">
       <label>Name of restaraunt</label>
-<<<<<<< HEAD
-      <input type="text" name="name" [(ngModel)]="name" #myUsername="ngModel"/>
-=======
       <input type="text" name="name" [(ngModel)]="spot.name" #name="ngModel"/>
->>>>>>> 4ba6901a486783f66d848bf2404405f214d39633
     </div>
 
     <div class="field">
@@ -40,25 +36,14 @@
     <app-form-select [categories]="categories" (handleChange)="handleCategoryChange($event)"></app-form-select>
 
     <div class="field">
-<<<<<<< HEAD
-      <label>tags</label>
-      <input type="checkbox" name="vibe" [(ngModel)]="vibe" #myUsername="ngModel"/>
-=======
       <li *ngFor="let c of spot.categories">{{c}}</li>
->>>>>>> 4ba6901a486783f66d848bf2404405f214d39633
     </div>
     
     <div class="field">
       <label>description</label>
       <textarea name="description" [(ngModel)]="spot.description" #myUsername="ngModel" id="description" cols="30" rows="10"></textarea>
     </div>
-<<<<<<< HEAD
-
-
-  
-=======
     
->>>>>>> 4ba6901a486783f66d848bf2404405f214d39633
     
   
     <div class="field submit">

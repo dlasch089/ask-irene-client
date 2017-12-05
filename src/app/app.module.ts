@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 // Services
 import { SpotService } from './services/spot.service';
@@ -21,7 +21,7 @@ import { AppComponent } from './app.component';
 
 // Routes
 const routes: Routes = [
-  {path:'', redirectTo: '/form', pathMatch: 'full'},
+  {path: '', redirectTo: '/form', pathMatch: 'full'},
   {path: 'user', component: PageUserComponent},
   {path: 'spot', component: PageSpotComponent},
   {path: 'form', component: PageFormComponent}
@@ -39,7 +39,7 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpModule
+    HttpClientModule
   ],
   providers: [
     SpotService,
@@ -47,3 +47,4 @@ const routes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
