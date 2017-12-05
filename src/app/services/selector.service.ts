@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
+import { Selectors } from '../models/select';
+
 @Injectable()
 export class SelectorService {
 
@@ -14,7 +16,7 @@ export class SelectorService {
   // price: String[];
   // district: String[];
   // situation: String[];
-
+ 
 
 
   constructor(private http: HttpClient) { }
