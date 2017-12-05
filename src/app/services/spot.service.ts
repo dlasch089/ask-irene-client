@@ -1,23 +1,23 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+
+import { Spot } from '../models/spot';
 
 @Injectable()
 export class SpotService {
 
   baseUrl = 'http://localhost:3000';
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
-  getAllSpots() {
-    return this.http.get(this.baseUrl + '/spots')
-     .map((res: Response) => res.json());
+  getAllSpots(): Observable<any> {
+    return this.http.get(this.baseUrl + '/spots');
   }
 
   addSpot(newSpot) {
-    console.log(newSpot);
-    return this.http.post(this.baseUrl + '/spots', newSpot)
-      .map((res: Response) => res.json());
+    console.log(newSpot.value);
+    return this.http.post(this.baseUrl + '/spots', newSpot.value)
+      .subscribe();
   }
 }

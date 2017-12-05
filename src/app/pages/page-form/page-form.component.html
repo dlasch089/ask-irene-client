@@ -2,9 +2,11 @@
   page-form works!
 </p>
 
-<li *ngFor="let spot of spots">
-{{spots.name | json}}
-</li>
+<ul>
+  <li *ngFor="let spot of spots">
+    {{spot.name}}
+  </li>
+</ul>
 
 <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
   

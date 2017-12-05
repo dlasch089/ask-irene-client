@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import 'rxjs/add/operator/map';
 
 import { Spot } from '../../models/spot';
 import { Selectables } from '../../models/select';
@@ -13,7 +14,7 @@ import { SpotService } from '../../services/spot.service';
 })
 export class PageFormComponent implements OnInit {
 
-  spots: Spot[];
+  spots = [];
   spot: Spot;
   categories = [
     'Cocktails',
@@ -56,9 +57,12 @@ export class PageFormComponent implements OnInit {
   ngOnInit() {
     this.spot = new Spot();
     this.spot.categories = [];
-
     this.spotService.getAllSpots()
-      .subscribe((data) => this.spots = data);
+      .subscribe((data) => {
+        this.spots = data;
+        console.log(this.spots);
+      });
+
   }
 
   handleCategoryChange(category) {
