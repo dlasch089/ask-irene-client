@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 
 import { Spot } from '../../models/spot';
-// include the selector-mode
+// include the selector-model
 
 import { SpotService } from '../../services/spot.service';
 import { SelectorService } from '../../services/selector.service';
@@ -43,8 +43,14 @@ export class PageFormComponent implements OnInit {
 
   handleCategoryChange(value) {
     this.spot.categories = value;
-    console.log(this.spot);
+    this.spot.district = value;
+    console.log('Categories: '+ this.spot.categories, 'District:' + this.spot.district);
   }
+
+  // handleDistrictChange(value) {
+
+  //   console.log(value);
+  // }
 
   submitForm() {
     this.spotService.addSpot(this.spot);

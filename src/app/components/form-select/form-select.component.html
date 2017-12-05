@@ -9,6 +9,6 @@
 
 <ul>
   <li *ngFor="let s of items" [hidden]="selected.indexOf(s) !== -1">
-    <button (click)="handleChange(s)"xw>{{s}}</button>
+    <button (click)="handleChange(s)">{{s}}</button>
   </li>
 </ul>

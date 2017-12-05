@@ -8,7 +8,7 @@
   </li>
 </ul>
 
-<form (ngSubmit)="submitForm()" #myForm="ngForm" novalidate>
+<form (ngSubmit)="submitForm()" #myForm="ngForm" *ngIf="formReady" novalidate>
   
     <div class="field">
       <label>Name of restaraunt</label>
@@ -17,22 +17,22 @@
 
     <div class="field">
       <label>District</label>
-      <input type="text" name="district" [(ngModel)]="spot.district"/>
+      <app-form-select [items]="selectors.district" (onChange)="handleCategoryChange($event)"></app-form-select>
     </div>
     
     <div class="field">
       <label>situation</label>
-      <input type="text" name="situation" [(ngModel)]="spot.situation"/>
+      <app-form-select [items]="selectors.situation" (onChange)="handleCategoryChange($event)"></app-form-select>
     </div>
     
     <div class="field">
       <label>price</label>
-      <input type="text" name="price" [(ngModel)]="spot.price"/>
+      <app-form-select [items]="selectors.price" (onChange)="handleCategoryChange($event)"></app-form-select>
     </div>
 
     <div class="field">
       <label>vibe</label>
-      <input type="text" name="vibe" [(ngModel)]="spot.vibe"/>
+      <app-form-select [items]="selectors.vibe" (onChange)="handleCategoryChange($event)"></app-form-select>
     </div>
 
     <div class="field">

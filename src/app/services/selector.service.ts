@@ -3,11 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 
+import { Selectors } from '../models/selector';
 
-// make a model for that
-class Selectors {
-  categories: any;
-}
 
 @Injectable()
 export class SelectorService {
