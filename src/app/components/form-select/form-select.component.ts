@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Selectables } from '../../models/select';
 
@@ -9,16 +9,17 @@ import { Selectables } from '../../models/select';
 })
 export class FormSelectComponent implements OnInit {
 
-  categories = Selectables[0];
-
+  @Input() categories = null;
+  @Output() handleChange = new EventEmitter<null>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  handleCategoryChange(value) {
-    this.categories = value;
+  onCategoryChange(value) {
+    event.preventDefault();
+    this.handleChange.emit(value);
   }
 
 }

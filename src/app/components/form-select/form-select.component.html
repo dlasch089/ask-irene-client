@@ -2,6 +2,10 @@
   form-select works!
 </p>
 
-<select name="categories" id="options">
-  <option *ngFor="let category of categories" value="{{category}}"> {{category}}</option>
-</select>
+<div *ngIf="!categories">Loading..</div>
+
+<ul>
+  <li *ngFor="let c of categories">
+    <button (click)="onCategoryChange(c)">{{c}}</button>
+  </li>
+</ul>
