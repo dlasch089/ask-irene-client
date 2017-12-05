@@ -6,3 +6,7 @@ ul {
 li {
   list-style: none;
 }
+
+img {
+  margin: 5px;
+}

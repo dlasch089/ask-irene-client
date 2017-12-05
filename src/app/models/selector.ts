@@ -4,4 +4,6 @@ export class Selectors {
   price: Array<string>;
   categories: Array<string>;
   tags: Array<string>;
+  // links: Object;
+  // images: Array<string>;
 }

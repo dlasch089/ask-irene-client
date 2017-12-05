@@ -30,6 +30,7 @@ export class PageFormComponent implements OnInit {
 
   ngOnInit() {
     this.spot = new Spot();
+    this.spot.images = [];
     this.spotService.getAllSpots()
       .subscribe((data) => this.spots = data);
 
@@ -41,10 +42,37 @@ export class PageFormComponent implements OnInit {
 
   }
 
-  handleCategoryChange(value) {
-    this.spot.categories = value;
-    this.spot.district = value;
-    console.log('Categories: '+ this.spot.categories, 'District:' + this.spot.district);
+  handleCategoryChange(value, selector) {
+    switch (selector) {
+      case 'district':
+      this.spot.district = value;
+      break;
+      case 'situation':
+      this.spot.situation = value;
+      break;
+      case 'price':
+      this.spot.price = value;
+      break;
+      case 'vibe':
+      this.spot.vibe = value;
+      break;
+      case 'categories':
+      this.spot.categories = value;
+      break;
+      case 'tags':
+      this.spot.tags = value;
+      break;
+      default:
+      console.log('error');
+    }
+    // console.log(this.spot);
+    // this.spot.categories = value;
+    // console.log('Categories: '+ this.spot.categories, 'District:' + this.spot.district);
+  }
+
+  handleAddImage(value) {
+    event.preventDefault();
+    this.spot.images.push(value);
   }
 
   // handleDistrictChange(value) {

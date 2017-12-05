@@ -17,33 +17,62 @@
 
     <div class="field">
       <label>District</label>
-      <app-form-select [items]="selectors.district" (onChange)="handleCategoryChange($event)"></app-form-select>
+      <app-form-select [items]="selectors.district" (onChange)="handleCategoryChange($event, 'district')"></app-form-select>
     </div>
     
     <div class="field">
       <label>situation</label>
-      <app-form-select [items]="selectors.situation" (onChange)="handleCategoryChange($event)"></app-form-select>
+      <app-form-select [items]="selectors.situation" (onChange)="handleCategoryChange($event, 'situation')"></app-form-select>
     </div>
     
     <div class="field">
       <label>price</label>
-      <app-form-select [items]="selectors.price" (onChange)="handleCategoryChange($event)"></app-form-select>
+      <app-form-select [items]="selectors.price" (onChange)="handleCategoryChange($event, 'price')"></app-form-select>
     </div>
 
     <div class="field">
       <label>vibe</label>
-      <app-form-select [items]="selectors.vibe" (onChange)="handleCategoryChange($event)"></app-form-select>
+      <app-form-select [items]="selectors.vibe" (onChange)="handleCategoryChange($event, 'vibe')"></app-form-select>
     </div>
 
     <div class="field">
       <label>category</label>
-      <app-form-select [items]="selectors.categories" (onChange)="handleCategoryChange($event)"></app-form-select>
+      <app-form-select [items]="selectors.categories" (onChange)="handleCategoryChange($event, 'categories')"></app-form-select>
+    </div>
+
+    <div class="field">
+      <label>tags</label>
+      <app-form-select [items]="selectors.tags" (onChange)="handleCategoryChange($event, 'tags')"></app-form-select>
     </div>
     
     <div class="field">
       <label>description</label>
-      <textarea name="description" [(ngModel)]="spot.description" #myUsername="ngModel" id="description" cols="30" rows="10"></textarea>
+      <textarea name="description" [(ngModel)]="spot.description" #myDescription="ngModel" id="description" cols="100" rows="5"></textarea>
     </div>
+
+    <div class="field">
+      <label>Webpage</label>
+      <input type="text" name="webpage" [(ngModel)]="spot.links.webpage"/>
+      <label>Facebook</label>
+      <input type="text" name="facebook" [(ngModel)]="spot.links.facebook"/>
+      <label>Google Maps</label>
+      <input type="text" name="googleMaps" [(ngModel)]="spot.links.googleMaps"/>
+      <label>Instagram</label>
+      <input type="text" name="instagram" [(ngModel)]="spot.links.instagram"/>
+    </div>
+    
+    <div class="field">
+      <div class="image-preview" *ngIf="spot.images">
+        <img *ngFor="let image of spot.images" src="https://instagram.com/p/{{image}}/media/?size=t" alt=""> 
+      </div>
+      <label>ImageURL</label>
+      <input type="text" name="image" [(ngModel)]="spot.images[0]"/>
+      <input type="text" name="image" [(ngModel)]="spot.images[1]"/>
+      <input type="text" name="image" [(ngModel)]="spot.images[2]"/>
+    </div>
+
+
+    
   
     <div class="field submit">
       <button type="submit" [disabled]="processing">Create Spot</button>
