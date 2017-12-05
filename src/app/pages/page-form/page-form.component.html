@@ -6,7 +6,7 @@
   
     <div class="field">
       <label>Name of restaraunt</label>
-      <input type="text" name="name" [(ngModel)]="restaurant.name" #name="ngModel"/>
+      <input type="text" name="name" [(ngModel)]="name" #myUsername="ngModel"/>
     </div>
 
     <div class="field">
@@ -31,15 +31,13 @@
 
     <div class="field">
       <label>tags</label>
-      <input type="checkbox"  name="vibe" [(ngModel)]="vibe" #myUsername="ngModel"/>
+      <input type="checkbox" name="vibe" [(ngModel)]="vibe" #myUsername="ngModel"/>
     </div>
 
     <div class="field">
       <label>description</label>
       <textarea name="description" [(ngModel)]="description" #myUsername="ngModel" id="description" cols="30" rows="10"></textarea>
     </div>
-
-    <!-- <app-form-select [options]="categories" (onChange)="handleCategoryChange($event)"></app-form-select> -->
 
 
   

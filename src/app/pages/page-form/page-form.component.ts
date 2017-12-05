@@ -21,4 +21,8 @@ export class PageFormComponent implements OnInit {
   ngOnInit() {
   }
 
+  submitForm(theForm) {
+    console.log('tst', theForm.value)
+  }
+
 }
