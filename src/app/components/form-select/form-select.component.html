@@ -1,11 +1,14 @@
-<p>
-  form-select works!
-</p>
 
-<div *ngIf="!categories">Loading..</div>
+<div *ngIf="!items">Loading..</div>
+
+<div class="field" *ngIf="selected">
+    <ul>
+      <li *ngFor="let s of selected; let ix = index"><button (click)="handleDelete(s, ix)">{{s}} X </button></li>
+    </ul>
+  </div>
 
 <ul>
-  <li *ngFor="let c of categories">
-    <button (click)="onCategoryChange(c)">{{c}}</button>
+  <li *ngFor="let s of items" [hidden]="selected.indexOf(s) !== -1">
+    <button (click)="handleChange(s)"xw>{{s}}</button>
   </li>
 </ul>

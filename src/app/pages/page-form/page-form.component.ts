@@ -3,9 +3,10 @@ import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 
 import { Spot } from '../../models/spot';
-import { Selectables } from '../../models/select';
+// include the selector-mode
 
 import { SpotService } from '../../services/spot.service';
+import { SelectorService } from '../../services/selector.service';
 
 @Component({
   selector: 'app-page-form',
@@ -16,66 +17,37 @@ export class PageFormComponent implements OnInit {
 
   spots = [];
   spot: Spot;
-  categories = [
-    'Cocktails',
-    'American',
-    'Asian Fusion',
-    'Avant-garde Cuisine',
-    'Bar',
-    'Brasa',
-    'Breakfast & brunch',
-    'Burger & sandwich',
-    'Café',
-    'Cake & pastry',
-    'Caribbean',
-    'Chinese',
-    'Craft beer',
-    'French',
-    'Healthy',
-    'Ice cream',
-    'Italian',
-    'Japanese',
-    'Korean',
-    'Mexican',
-    'Peruvian',
-    'Pizza',
-    'Ramen',
-    'Seafood',
-    'South American',
-    'Speciality Coffee',
-    'Sushi',
-    'Tapas',
-    'Thai',
-    'Vermut',
-    'Vietnamese',
-    'Wine'];
+  selectors = null;
   processing = false;
   feedbackEnabled = false;
+  formReady = false;
 
-  constructor(private spotService: SpotService, private router: Router) { }
+  constructor(
+    private spotService: SpotService,
+    private selectorService: SelectorService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.spot = new Spot();
-    this.spot.categories = [];
     this.spotService.getAllSpots()
-      .subscribe((data) => {
-        this.spots = data;
-        console.log(this.spots);
+      .subscribe((data) => this.spots = data);
+
+    this.selectorService.load()
+      .then((data) => {
+        this.formReady = true;
+        this.selectors = data;
       });
 
   }
 
-  handleCategoryChange(category) {
-    this.spot.categories.push(category);
+  handleCategoryChange(value) {
+    this.spot.categories = value;
     console.log(this.spot);
   }
 
-  submitForm(theForm) {
-    this.spotService.addSpot(theForm);
-  }
-
-  submitForm(theForm) {
-    console.log('tst', theForm.value)
+  submitForm() {
+    this.spotService.addSpot(this.spot);
   }
 
 }

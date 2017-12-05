@@ -16,8 +16,8 @@ export class SpotService {
   }
 
   addSpot(newSpot) {
-    console.log(newSpot.value);
-    return this.http.post(this.baseUrl + '/spots', newSpot.value)
+    console.log(newSpot);
+    return this.http.post(this.baseUrl + '/spots', newSpot)
       .subscribe();
   }
 }

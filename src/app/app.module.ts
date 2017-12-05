@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Services
 import { SpotService } from './services/spot.service';
+import { SelectorService } from './services/selector.service';
+
 
 // Pages
 import { PageUserComponent } from './pages/page-user/page-user.component';
@@ -43,6 +45,7 @@ const routes: Routes = [
   ],
   providers: [
     SpotService,
+    SelectorService
   ],
   bootstrap: [AppComponent]
 })

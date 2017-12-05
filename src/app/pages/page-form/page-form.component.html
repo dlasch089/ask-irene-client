@@ -2,51 +2,48 @@
   page-form works!
 </p>
 
-<ul>
+<ul *ngIf="spots">
   <li *ngFor="let spot of spots">
     {{spot.name}}
   </li>
 </ul>
 
-<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
+<form (ngSubmit)="submitForm()" #myForm="ngForm" novalidate>
   
     <div class="field">
       <label>Name of restaraunt</label>
-      <input type="text" name="name" [(ngModel)]="spot.name" #name="ngModel"/>
+      <input type="text" name="name" [(ngModel)]="spot.name"/>
     </div>
 
     <div class="field">
       <label>District</label>
-      <input type="text" name="district" [(ngModel)]="spot.district" #myUsername="ngModel"/>
+      <input type="text" name="district" [(ngModel)]="spot.district"/>
     </div>
     
     <div class="field">
       <label>situation</label>
-      <input type="text" name="situation" [(ngModel)]="spot.situation" #myUsername="ngModel"/>
+      <input type="text" name="situation" [(ngModel)]="spot.situation"/>
     </div>
     
     <div class="field">
       <label>price</label>
-      <input type="text" name="price" [(ngModel)]="spot.price" #myUsername="ngModel"/>
+      <input type="text" name="price" [(ngModel)]="spot.price"/>
     </div>
 
     <div class="field">
       <label>vibe</label>
-      <input type="text" name="vibe" [(ngModel)]="spot.vibe" #myUsername="ngModel"/>
+      <input type="text" name="vibe" [(ngModel)]="spot.vibe"/>
     </div>
 
-    <app-form-select [categories]="categories" (handleChange)="handleCategoryChange($event)"></app-form-select>
-
     <div class="field">
-      <li *ngFor="let c of spot.categories">{{c}}</li>
+      <label>category</label>
+      <app-form-select [items]="selectors.categories" (onChange)="handleCategoryChange($event)"></app-form-select>
     </div>
     
     <div class="field">
       <label>description</label>
       <textarea name="description" [(ngModel)]="spot.description" #myUsername="ngModel" id="description" cols="30" rows="10"></textarea>
     </div>
-    
-    
   
     <div class="field submit">
       <button type="submit" [disabled]="processing">Create Spot</button>

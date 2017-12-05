@@ -1,35 +1,30 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 
-import { Selectors } from '../models/select';
+
+// make a model for that
+class Selectors {
+  categories: any;
+}
 
 @Injectable()
 export class SelectorService {
 
   baseUrl = 'http://localhost:3000';
 
-  // selectors: Object[];
-  // categories: String[];
-  // tags: String[];
-  // price: String[];
-  // district: String[];
-  // situation: String[];
- 
+  promise: Promise<{}>;
+  cache: Selectors;
 
-
-  constructor(private http: HttpClient) { }
-
-  getCategories(categories) {
-    return this.http.get(this.baseUrl + 'spots/selectors', categories)
+  constructor(private http: HttpClient) {
+    this.promise = this.http.get(this.baseUrl + '/spots/selectors')
+      .toPromise()
+      .then((data: Selectors)  => this.cache = data);
   }
 
-  getTags(tags) {
-    return this.http.get(this.baseUrl + 'spots/selectors', tags)
-  }
-  getPrice(price) {
-    return this.http.get(this.baseUrl + 'spots/selectors', price)
+  load(): Promise<Selectors> {
+    return this.promise.then(() => this.cache);
   }
 
 
