@@ -5,17 +5,22 @@ import 'rxjs/add/operator/toPromise';
 
 import { Selectors } from '../models/selector';
 
+import { environment } from '../../environments/environment';
+
+const apiUrl = environment.apiUrl + '/spots';
 
 @Injectable()
 export class SelectorService {
-
-  baseUrl = 'http://localhost:3000';
 
   promise: Promise<{}>;
   cache: Selectors;
 
   constructor(private http: HttpClient) {
-    this.promise = this.http.get(this.baseUrl + '/spots/selectors')
+
+    const requestOptions = {
+      withCredentials: true
+    };
+    this.promise = this.http.get(apiUrl + '/selectors', requestOptions)
       .toPromise()
       .then((data: Selectors)  => this.cache = data);
   }
@@ -23,6 +28,5 @@ export class SelectorService {
   load(): Promise<Selectors> {
     return this.promise.then(() => this.cache);
   }
-
 
 }

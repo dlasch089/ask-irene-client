@@ -2,13 +2,15 @@
   "name": "client",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "9.0.0",
+    "npm": "5.5.1"
+  },
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "dev": "ng serve --aot",
+    "heroku-prebuild": "rm -rf node_modules && npm cache clean",
+    "postinstall": "ng build --aot -prod",
+    "start": "node app.js"
   },
   "private": true,
   "dependencies": {

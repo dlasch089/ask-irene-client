@@ -2,22 +2,27 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
+import { environment } from '../../environments/environment';
+
+const apiUrl = environment.apiUrl + '/spots';
+
 import { Spot } from '../models/spot';
 
 @Injectable()
 export class SpotService {
 
-  baseUrl = 'http://localhost:3000';
-
   constructor(private http: HttpClient) { }
 
   getAllSpots(): Observable<any> {
-    return this.http.get(this.baseUrl + '/spots');
+    const requestOptions = {
+      withCredentials: true
+    };
+    return this.http.get(apiUrl + '/', requestOptions);
   }
 
   addSpot(newSpot) {
     console.log(newSpot);
-    return this.http.post(this.baseUrl + '/spots', newSpot);
+    return this.http.post(apiUrl + '/', newSpot);
   }
 }
 
