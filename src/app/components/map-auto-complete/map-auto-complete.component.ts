@@ -1,4 +1,4 @@
-import { Component, ElementRef, NgModule, NgZone, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, ElementRef, NgModule, NgZone, OnInit, ViewChild, Output, EventEmitter, Input } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AgmCoreModule, MapsAPILoader } from '@agm/core';
@@ -18,7 +18,10 @@ export class MapAutoCompleteComponent implements OnInit {
   information: Array<any> = [];
 
   public name: string;
-  public location: Object;
+
+  // public place: google.maps.places.PlaceResult;
+
+  @Input() location: Object;
 
   @Output() onSelect = new EventEmitter<Object>();
 
@@ -61,7 +64,6 @@ export class MapAutoCompleteComponent implements OnInit {
           this.latitude = place.geometry.location.lat();
           this.longitude = place.geometry.location.lng();
           this.zoom = 12;
-          console.log(place);
 
           this.information.push( place.name, place.geometry.location, place.url);
           this.onSelect.emit(this.information);
@@ -79,5 +81,4 @@ export class MapAutoCompleteComponent implements OnInit {
       });
     }
   }
-
 }

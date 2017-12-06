@@ -16,7 +16,7 @@ export class FormSelectComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.selected = [];
+    // this.selected = [];
   }
 
   handleAdd(value) {

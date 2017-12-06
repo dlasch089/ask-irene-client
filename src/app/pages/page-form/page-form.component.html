@@ -12,7 +12,7 @@
 
     <div class="field">
         <label>Location</label>
-        <app-map-auto-complete (onSelect)="handleLocationSelect($event)"></app-map-auto-complete>
+        <app-map-auto-complete (onSelect)="handleLocationSelect($event)" ></app-map-auto-complete>
       </div>
 
     <div class="field">
@@ -22,27 +22,27 @@
     
     <div class="field">
       <label>Situation</label>
-      <app-form-select [items]="selectors.situation" [selected]="selectors.situation" (onChange)="handleSelectorChange('situation', $event)"></app-form-select>
+      <app-form-select [items]="selectors.situation" [selected]="spot.situation" (onChange)="handleSelectorChange('situation', $event)"></app-form-select>
     </div>
     
     <div class="field">
-      <label>price</label>
-      <app-form-select [items]="selectors.price" [selected]="selectors.price" (onChange)="handleSelectorChange('price', $event)" [max]="1"></app-form-select>
+      <label>Price</label>
+      <app-form-select [items]="selectors.price" [selected]="spot.price" (onChange)="handleSelectorChange('price', $event)" [max]="1"></app-form-select>
     </div>
 
     <div class="field">
       <label>vibe</label>
-      <app-form-select [items]="selectors.vibe" [selected]="selectors.vibe" (onChange)="handleSelectorChange('vibe', $event)"></app-form-select>
+      <app-form-select [items]="selectors.vibe" [selected]="spot.vibe" (onChange)="handleSelectorChange('vibe', $event)"></app-form-select>
     </div>
 
     <div class="field">
       <label>category</label>
-      <app-form-select [items]="selectors.categories" [selected]="selectors.categories" (onChange)="handleSelectorChange('categories', $event)"></app-form-select>
+      <app-form-select [items]="selectors.categories" [selected]="spot.categories" (onChange)="handleSelectorChange('categories', $event)"></app-form-select>
     </div>
 
     <div class="field">
       <label>tags</label>
-      <app-form-select [items]="selectors.tags" [selected]="selectors.tags" (onChange)="handleSelectorChange('tags', $event)"></app-form-select>
+      <app-form-select [items]="selectors.tags" [selected]="spot.tags" (onChange)="handleSelectorChange('tags', $event)"></app-form-select>
     </div>
     
     <div class="field">

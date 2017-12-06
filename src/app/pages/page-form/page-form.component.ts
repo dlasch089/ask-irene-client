@@ -38,7 +38,6 @@ export class PageFormComponent implements OnInit {
         this.formReady = true;
         this.selectors = data;
       });
-
   }
 
   handleSelectorChange(key, value) {
@@ -57,12 +56,15 @@ export class PageFormComponent implements OnInit {
       coordinates: [informationArray[1].lat(), informationArray[1].lng()]
     };
     this.spot.links.googleMaps = informationArray[2];
-    console.log(this.spot);
   }
 
   submitForm(form) {
+    this.formReady = false;
     // form.reset();
-    this.spotService.addSpot(this.spot);
-    this.spot = new Spot();
+    this.spotService.addSpot(this.spot)
+      .subscribe(() => {
+        this.formReady = true;
+        this.spot = new Spot();
+      });
   }
 }
