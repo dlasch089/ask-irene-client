@@ -9,8 +9,9 @@ export class FormSelectComponent implements OnInit {
 
   @Input() items: Array<string> = null;
   @Output() onChange = new EventEmitter<Array<string>>();
+  @Input() max: number;
 
-  selected: Array<string> = []; // Error: Argument of type 'any[]' is not assignable to parameter of type 'null'.
+  @Input() selected: Array<string> = []; // Error: Argument of type 'any[]' is not assignable to parameter of type 'null'.
 
   constructor() { }
 
@@ -18,7 +19,7 @@ export class FormSelectComponent implements OnInit {
     this.selected = [];
   }
 
-  handleChange(value) {
+  handleAdd(value) {
     event.preventDefault();
     this.selected.push(value);
     this.onChange.emit(this.selected);

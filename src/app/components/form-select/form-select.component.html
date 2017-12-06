@@ -1,14 +1,14 @@
 
 <div *ngIf="!items">Loading..</div>
 
-<div class="field" *ngIf="selected">
-    <ul>
-      <li *ngFor="let s of selected; let ix = index"><button (click)="handleDelete(s, ix)">{{s}} X </button></li>
-    </ul>
-  </div>
-
 <ul>
-  <li *ngFor="let s of items" [hidden]="selected.indexOf(s) !== -1">
-    <button (click)="handleChange(s)">{{s}}</button>
+  <li *ngFor="let s of items">
+    <button (click)="handleAdd(s)" [disabled]="selected.indexOf(s) !== -1 || (this.max && selected.length === this.max)">{{s}}</button>
   </li>
 </ul>
+
+<div class="field" *ngIf="selected">
+  <ul>
+    <li *ngFor="let s of selected; let ix = index"><button (click)="handleDelete(s, ix)">{{s}} X </button></li>
+  </ul>
+</div>

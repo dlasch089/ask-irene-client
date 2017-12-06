@@ -8,7 +8,7 @@
   </li>
 </ul> -->
 
-<form (ngSubmit)="submitForm()" #myForm="ngForm" *ngIf="formReady" novalidate>
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" *ngIf="formReady" novalidate>
 
     <div class="field">
         <label>Location</label>
@@ -17,32 +17,32 @@
 
     <div class="field">
       <label>District</label>
-      <app-form-select [items]="selectors.district" (onChange)="handleCategoryChange($event, 'district')"></app-form-select>
+      <app-form-select [items]="selectors.district" [selected]="spot.district" (onChange)="handleSelectorChange('district', $event)" [max]="1"></app-form-select>
     </div>
     
     <div class="field">
-      <label>situation</label>
-      <app-form-select [items]="selectors.situation" (onChange)="handleCategoryChange($event, 'situation')"></app-form-select>
+      <label>Situation</label>
+      <app-form-select [items]="selectors.situation" [selected]="selectors.situation" (onChange)="handleSelectorChange('situation', $event)"></app-form-select>
     </div>
     
     <div class="field">
       <label>price</label>
-      <app-form-select [items]="selectors.price" (onChange)="handleCategoryChange($event, 'price')"></app-form-select>
+      <app-form-select [items]="selectors.price" [selected]="selectors.price" (onChange)="handleSelectorChange('price', $event)" [max]="1"></app-form-select>
     </div>
 
     <div class="field">
       <label>vibe</label>
-      <app-form-select [items]="selectors.vibe" (onChange)="handleCategoryChange($event, 'vibe')"></app-form-select>
+      <app-form-select [items]="selectors.vibe" [selected]="selectors.vibe" (onChange)="handleSelectorChange('vibe', $event)"></app-form-select>
     </div>
 
     <div class="field">
       <label>category</label>
-      <app-form-select [items]="selectors.categories" (onChange)="handleCategoryChange($event, 'categories')"></app-form-select>
+      <app-form-select [items]="selectors.categories" [selected]="selectors.categories" (onChange)="handleSelectorChange('categories', $event)"></app-form-select>
     </div>
 
     <div class="field">
       <label>tags</label>
-      <app-form-select [items]="selectors.tags" (onChange)="handleCategoryChange($event, 'tags')"></app-form-select>
+      <app-form-select [items]="selectors.tags" [selected]="selectors.tags" (onChange)="handleSelectorChange('tags', $event)"></app-form-select>
     </div>
     
     <div class="field">
@@ -55,7 +55,7 @@
       <input type="text" name="webpage" [(ngModel)]="spot.links.webpage"/>
       <label>Facebook</label>
       <input type="text" name="facebook" [(ngModel)]="spot.links.facebook"/>
-      <label>Google Maps</label>
+      <label>Google Maps (automatically filled in from the maps-module!)</label>
       <input type="text" name="googleMaps" [(ngModel)]="spot.links.googleMaps"/>
       <label>Instagram</label>
       <input type="text" name="instagram" [(ngModel)]="spot.links.instagram"/>
@@ -65,7 +65,7 @@
       <div class="image-preview" *ngIf="spot.images">
         <img *ngFor="let image of spot.images" src="https://instagram.com/p/{{image}}/media/?size=t" alt=""> 
       </div>
-      <label>ImageURL</label>
+      <label>Image-Shortcode (e.g. https://www.instagram.com/p/<span>BcHIEddFgR0</span>/?taken-at=220848020</label>
       <input type="text" name="image" [(ngModel)]="spot.images[0]"/>
       <input type="text" name="image" [(ngModel)]="spot.images[1]"/>
       <input type="text" name="image" [(ngModel)]="spot.images[2]"/>

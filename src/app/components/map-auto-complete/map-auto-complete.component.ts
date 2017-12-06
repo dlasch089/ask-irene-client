@@ -61,8 +61,9 @@ export class MapAutoCompleteComponent implements OnInit {
           this.latitude = place.geometry.location.lat();
           this.longitude = place.geometry.location.lng();
           this.zoom = 12;
+          console.log(place);
 
-          this.information.push( place.name, place.geometry.location);
+          this.information.push( place.name, place.geometry.location, place.url);
           this.onSelect.emit(this.information);
         });
       });

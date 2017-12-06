@@ -10,3 +10,11 @@ li {
 img {
   margin: 5px;
 }
+
+input {
+  width: 50%;
+}
+
+span {
+  color: red;
+}

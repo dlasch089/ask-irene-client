@@ -3,14 +3,16 @@
 export class Spot {
   id: string;
   name: string;
-  district: string;
-  categories: Array<string>;
-  situation: string;
-  price: string;
-  vibe: string;
-  tags: Array<string>;
-  images: Array<string>;
+  district: Array<string> = [];
+  categories: Array<string> = [];
+  situation: Array<string> = [];
+  price: Array<string> = [];
+  vibe: Array<string> = [];
+  tags: Array<string> = [];
+  images: Array<string> = [];
   description: string;
-  links: Object = {}; // 1. web, 2. facebook, 3. google maps, 4. instagram
+  links: any = {
+    googleMaps: ''
+  }; // 1. web, 2. facebook, 3. google maps, 4. instagram
   location: Object; // object containing lat, long like mongoose likes it? or just array of lat, lng?
 }
