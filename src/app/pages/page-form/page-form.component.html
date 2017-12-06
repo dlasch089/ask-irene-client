@@ -1,12 +1,12 @@
-<p>
-  page-form works!
-</p>
+
 <!-- 
 <ul *ngIf="spots">
   <li *ngFor="let spot of spots">
     {{spot.name}}
   </li>
 </ul> -->
+
+<a [routerLink]="['/list-all']">List of all spots created</a>
 
 <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" *ngIf="formReady" novalidate>
 

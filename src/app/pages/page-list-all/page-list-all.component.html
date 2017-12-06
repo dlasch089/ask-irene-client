@@ -1,0 +1,26 @@
+<p>
+  page-list-all works!
+</p>
+
+<div class="spotlist">
+  <ul *ngFor="let spot of spots">
+    <li>Name: <span>{{spot.name}}</span></li>
+    <li>Description: <span>{{spot.description}} </span></li>
+    <li>Price: <span>{{spot.price}}</span></li>
+    <li>Vibe:
+      <span *ngFor="let vibe of spot.vibe">{{vibe}}, </span>
+    </li>
+    <li>Categories:
+      <span *ngFor="let cat of spot.category">{{cat}}, </span>
+    </li>
+    <li>Tags:
+      <span *ngFor="let tag of spot.tags">{{tag}}, </span>
+    </li>
+    <li>Situation:
+      <span *ngFor="let sit of spot.situation">{{sit}}, </span>
+    </li>
+    <!-- <li>Links:
+      <span *ngFor="let link of spot.links">{{link}}</span>
+    </li> -->
+  </ul>
+</div>

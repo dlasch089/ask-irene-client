@@ -9,6 +9,7 @@ ng g s services/auth
 ng g c pages/page-user
 ng g c pages/page-spot
 ng g c pages/page-form
+ng g c pages/page-list-all
 
 ng g c components/spot-list
 ng g c components/spot-list-detail
