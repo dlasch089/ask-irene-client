@@ -28,7 +28,6 @@ export class FormSelectComponent implements OnInit {
     event.preventDefault();
     this.selected.splice(index, 1);
     this.onChange.emit(this.selected);
-    console.log(this.selected);
   }
 
 }

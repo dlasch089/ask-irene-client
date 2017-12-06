@@ -79,7 +79,7 @@ export class PageFormComponent implements OnInit {
     this.spot.name = informationArray[0];
     this.spot.location = {
       type: 'Point',
-      coordinates: [informationArray[1].lat(), informationArray[1].lat()]
+      coordinates: [informationArray[1].lat(), informationArray[1].lng()]
     };
   }
 
