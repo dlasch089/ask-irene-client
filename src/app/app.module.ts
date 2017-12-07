@@ -74,12 +74,9 @@ const routes: Routes = [
     SpotService,
     SelectorService,
     AuthService,
-<<<<<<< HEAD
-    FilterService
-=======
+    FilterService,
     RequireAuthGuard,
     RequireAnonGuard
->>>>>>> 2bb5dd718861c3cb24d6d18bfe8f7dfbcc4bd862
   ],
   bootstrap: [AppComponent]
 })
