@@ -9,6 +9,8 @@ import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 // Services
 import { SpotService } from './services/spot.service';
 import { SelectorService } from './services/selector.service';
+import { AuthService } from './services/auth.service';
+import { FilterService } from './services/filter.service';
 
 // Pages
 import { PageUserComponent } from './pages/page-user/page-user.component';
@@ -54,7 +56,9 @@ const routes: Routes = [
   ],
   providers: [
     SpotService,
-    SelectorService
+    SelectorService,
+    AuthService,
+    FilterService
   ],
   bootstrap: [AppComponent]
 })
