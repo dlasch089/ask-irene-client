@@ -6,7 +6,6 @@ const path = require('path');
 
 const forceSSL = function() {
   return function (req, res, next) {
-    console.log(req.method, req.path, req.headers);
     if (req.headers['x-forwarded-proto'] !== 'https') {
 			const path = 'https://' + req.get('Host') + req.url;
       return res.redirect(path);
