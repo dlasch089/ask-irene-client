@@ -7,4 +7,9 @@ export class User {
   role: Array<string>;
   favorites: Array<string>;
   wishlist: Array<string>;
+
+  // Ask Andre about this:
+  constructor(obj: Object = {}) {
+    Object.assign(this, obj);
+  }
 }

@@ -1,0 +1,14 @@
+<form [ngClass]="{'has-error': error}" novalidate>
+  <div class="form-group field" [ngClass]="{'has-error': error}">
+    <label>Username</label>
+    <input type="text" [(ngModel)]="user.username" name="username" required/>
+  </div>
+  <div class="form-group field" [ngClass]="{'has-error': error}">
+    <label>Password</label>
+    <input type="password" [(ngModel)]="user.password" name="password" required/>
+  </div>
+  <div class="form-group actions">
+    <button (click)="login()">login</button>
+    <p *ngIf="error" class="error">{{error}}</p>
+  </div>
+</form> 

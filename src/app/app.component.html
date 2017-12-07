@@ -1,9 +1,24 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
+<header class="site-header">
+  
+    <h1>
+      Welcome to {{ title }}! 
+    </h1>
+  
+    <div [ngClass]="{'is-user': user, 'is-anon': anon}">
+      <a [routerLink]="['/spots']">Spots</a>
+      <div *ngIf="loading">
+        <span class="username text">loading...</span>
+      </div>
+      <div *ngIf="!loading && !!user">
+        <a (click)="profile()">{{user.username}}</a>
+        <a (click)="logout()">logout</a>
+      </div>
+      <div *ngIf="!loading && anon">
+        <a (click)="login()">login</a>
+        <a (click)="signup()">signup</a>
+      </div>
+    </div>  <hr/>
+  </header>
 
 <router-outlet></router-outlet>
 

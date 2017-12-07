@@ -9,13 +9,26 @@ ng g s services/auth
 ng g c pages/page-user
 ng g c pages/page-spot
 ng g c pages/page-form
-ng g c pages/page-list-all
+ng g c pages/page-list-all // Needs to be deleted again!
+ng g c pages/page-spots
+ ng g c pages/page-me
 
 ng g c components/spot-list
 ng g c components/spot-list-detail
 ng g c components/user-detail
 
 ng g c components/map-auto-complete
+
+# Auth
+
+ng g guard guards/require-anon
+ng g guard guards/require-auth
+
+ng g c pages/page-login
+ng g c pages/page-signup
+
+ng g c components/auth-login
+ng g c components/auth-signup
 
 ## Installed packages
 
