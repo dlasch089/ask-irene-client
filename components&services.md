@@ -19,6 +19,8 @@ ng g c components/spot-list-detail
 ng g c components/user-detail
 ng g c components/filter
 ng g c components/filter-select
+ng g c components/spot-detail
+ng g c components/spot-list
 
 ng g c components/map-auto-complete
 
