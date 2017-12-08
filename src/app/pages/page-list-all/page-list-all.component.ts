@@ -13,12 +13,21 @@ import { SpotService } from '../../services/spot.service';
 export class PageListAllComponent implements OnInit {
 
   spots = [];
+  spot;
 
   constructor(private spotService: SpotService) { }
 
   ngOnInit() {
     this.spotService.getAllSpots()
       .subscribe((data) => this.spots = data);
+  }
+
+  handleDelete(spotId) {
+    this.spotService.deleteSpot(spotId)
+      .subscribe(() => {
+        this.spotService.getAllSpots()
+        .subscribe((data) => this.spots = data);
+      });
   }
 
 }

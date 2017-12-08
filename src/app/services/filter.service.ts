@@ -13,6 +13,10 @@ export class FilterService {
 
   constructor(private http: HttpClient) { }
 
+  // service needs to listen for changes in the parameters on the selectors on the homepage
+  // and add them to an array. when the user clicks search we iterate over that array
+  // and builds the search query string from the elements in the array
+
 
 //   getFilteredSpots(url: string, param: any): Observable<any> {
 //     let params: URLSearchParams = new URLSearchParams();

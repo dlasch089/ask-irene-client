@@ -24,5 +24,14 @@ export class SpotService {
     console.log(newSpot);
     return this.http.post(apiUrl + '/', newSpot);
   }
+
+  deleteSpot(spotId) {
+    const requestOptions = {
+      withCredentials: true,
+      spotId: spotId
+    };
+    console.log(spotId);
+    return this.http.post(apiUrl + `/${spotId}`, requestOptions);
+  }
 }
 

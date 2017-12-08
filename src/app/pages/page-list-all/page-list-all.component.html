@@ -19,6 +19,7 @@
     <li>Situation:
       <span *ngFor="let sit of spot.situation">{{sit}}, </span>
     </li>
+    <button (click)='handleDelete(spot._id)'>Delete spot</button>
     <!-- <li>Links:
       <span *ngFor="let link of spot.links">{{link}}</span>
     </li> -->
