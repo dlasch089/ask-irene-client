@@ -1,8 +1,8 @@
 
-<div *ngIf="!items">Loading..</div>
+<div *ngIf="!selectorItems">Loading..</div>
 
 <ul>
-  <li *ngFor="let s of items">
+  <li *ngFor="let s of selectorItems">
     <button (click)="handleAdd(s)" [disabled]="selected.indexOf(s) !== -1 || (this.max && selected.length === this.max)">{{s}}</button>
   </li>
 </ul>

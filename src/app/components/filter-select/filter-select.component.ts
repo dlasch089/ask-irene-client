@@ -8,10 +8,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class FilterSelectComponent implements OnInit {
 
   @Input() items: Array<string> = null;
-  @Output() onChange = new EventEmitter<Array<string>>();
   @Input() max: number;
-
   @Input() selected: Array<string> = []; // Error: Argument of type 'any[]' is not assignable to parameter of type 'null'.  
+
+  @Output() onChange = new EventEmitter<Array<string>>();
 
   constructor() { }
 

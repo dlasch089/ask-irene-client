@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 
@@ -15,41 +15,46 @@ import { SelectorService } from '../../services/selector.service';
 })
 export class FilterComponent implements OnInit {
 
-  spots = [];
   filter: Filter;
-  selectors = null;
-  formReady = false;
-  result = null;
+
+  feedbackEnabled = false;
+  processing = false;
+
+  @Input() spots: Object;
+  @Input() selectors = null;
+
+  @Output() onChange = new EventEmitter<Object>();
 
   constructor(private spotService: SpotService, private selectorService: SelectorService, private router: Router ) { }
 
   ngOnInit() {
     this.filter = new Filter();
-    this.spotService.getAllSpots()
-      .subscribe((data) => this.spots = data);
-
-    this.selectorService.load()
-      .then((data) => {
-        this.formReady = true;
-        this.selectors = data;
-      });
   }
 
+  // should emit
   handleFilterChange(key, value) {
+    // let count = 0;
     const values = Object.values(this.filter);
     this.filter[key] = value; // needs to be in the brackets, because it is a string
     for (let ix = 0; ix < values.length; ix++) {
       if (values[ix].length > 0) {
         this.findResult();
+      } else {
+        this.spotService.getAllSpots()
+          .subscribe((result) => {
+            this.spots = result;
+            this.onChange.emit(this.spots);
+          });
       }
     }
   }
 
+  // should emit
   findResult() {
     this.spotService.filterSpots(this.filter)
-      .subscribe((spots) => {
-        this.result = spots;
-        console.log(this.result);
+    .subscribe((result) => {
+      this.spots = result;
+      this.onChange.emit(this.spots);
       });
   }
 }

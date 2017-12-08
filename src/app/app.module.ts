@@ -17,7 +17,6 @@ import { RequireAnonGuard } from './guards/require-anon.guard';
 import { SpotService } from './services/spot.service';
 import { SelectorService } from './services/selector.service';
 import { AuthService } from './services/auth.service';
-import { FilterService } from './services/filter.service';
 
 // Pages
 import { PageSpotsComponent } from './pages/page-spots/page-spots.component';
@@ -78,7 +77,6 @@ const routes: Routes = [
     SpotService,
     SelectorService,
     AuthService,
-    FilterService,
     RequireAuthGuard,
     RequireAnonGuard
   ],

@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class FormSelectComponent implements OnInit {
 
-  @Input() items: Array<string> = null;
+  @Input() selectorItems: Array<string> = null;
   @Output() onChange = new EventEmitter<Array<string>>();
   @Input() max: number;
 
