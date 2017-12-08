@@ -33,5 +33,10 @@ export class SpotService {
     console.log(spotId);
     return this.http.post(apiUrl + `/${spotId}`, requestOptions);
   }
+
+  filterSpots(newFilter) {
+    console.log(newFilter);
+    return this.http.post(apiUrl + '/filter', newFilter);
+  }
 }
 

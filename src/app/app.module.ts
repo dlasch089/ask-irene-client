@@ -32,6 +32,7 @@ import { FormSelectComponent } from './components/form-select/form-select.compon
 import { MapAutoCompleteComponent } from './components/map-auto-complete/map-auto-complete.component';
 import { AuthSignupComponent } from './components/auth-signup/auth-signup.component';
 import { AuthLoginComponent } from './components/auth-login/auth-login.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 // Routes
 const routes: Routes = [
@@ -57,6 +58,7 @@ const routes: Routes = [
     AuthLoginComponent,
     PageSpotsComponent,
     PageMeComponent,
+    FilterComponent,
   ],
   imports: [
     BrowserModule,

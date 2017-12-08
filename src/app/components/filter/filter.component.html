@@ -1,0 +1,18 @@
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" *ngIf="formReady" novalidate>
+    
+<div class="field">
+    <label>tags</label>
+    <app-form-select [items]="selectors.district" [selected]="filter.district" (onChange)="handleFilterChange('district', $event)"></app-form-select>
+  </div>
+
+  <div class="field submit">
+      <button type="submit" [disabled]="processing">Show Results</button>
+      <div *ngIf="feedbackEnabled && myForm.invalid">
+        <p class="validation">there are errors in the form, please review the fields</p>
+      </div>
+    </div>
+  </form>
+
+  <p>
+    {{this.result | json}}
+  </p>
