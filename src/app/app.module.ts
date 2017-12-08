@@ -33,6 +33,8 @@ import { AuthSignupComponent } from './components/auth-signup/auth-signup.compon
 import { AuthLoginComponent } from './components/auth-login/auth-login.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { FilterSelectComponent } from './components/filter-select/filter-select.component';
+import { SpotListComponent } from './components/spot-list/spot-list.component';
+import { SpotDetailComponent } from './components/spot-detail/spot-detail.component';
 
 // Routes
 const routes: Routes = [
@@ -60,6 +62,8 @@ const routes: Routes = [
     PageMeComponent,
     FilterComponent,
     FilterSelectComponent,
+    SpotListComponent,
+    SpotDetailComponent,
   ],
   imports: [
     BrowserModule,

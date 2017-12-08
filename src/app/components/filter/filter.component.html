@@ -25,13 +25,6 @@
     <label>district</label>
     <app-filter-select [items]="selectors.district" [selected]="filter.district" (onChange)="handleFilterChange('district', $event)"></app-filter-select>
   </div>
-
-  <div class="field submit">
-      <button type="submit" [disabled]="processing">Show Results</button>
-      <div *ngIf="feedbackEnabled && myForm.invalid">
-        <p class="validation">there are errors in the form, please review the fields</p>
-      </div>
-    </div>
   </form>
   
  

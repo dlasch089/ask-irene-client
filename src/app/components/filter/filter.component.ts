@@ -55,6 +55,7 @@ export class FilterComponent implements OnInit {
     .subscribe((result) => {
       this.spots = result;
       this.onChange.emit(this.spots);
-      });
+      console.log(this.spots);
+    });
   }
 }

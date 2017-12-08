@@ -29,7 +29,6 @@ export class PageSpotsComponent implements OnInit {
   }
 
   handleFilterChange(result) {
-    console.log(this.spots, result);
     this.spots = result;
   }
 
