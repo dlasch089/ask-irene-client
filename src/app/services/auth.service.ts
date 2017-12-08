@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, RequestOptions } from '@angular/http';
+// import { Http, Response, RequestOptions } from '@angular/http';
 import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
@@ -23,7 +23,7 @@ export class AuthService {
   // Observable string stream
   userChange$ = this.userChange.asObservable();
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   private setUser(user: User = null) {
     this.loaded = true;
@@ -32,29 +32,32 @@ export class AuthService {
   }
 
   signup(user: User) {
-    const options = new RequestOptions();
-    options.withCredentials = true;
-    return this.http.post(apiUrl + '/signup', user, options)
+    const requestOptions = {
+      withCredentials: true,
+    };
+    return this.http.post(apiUrl + '/signup', user, requestOptions)
       .map(res => {
-        this.setUser(new User(res.json()));
+        this.setUser(new User(res));
         return user;
       });
   }
 
   login(user: User) {
-    const options = new RequestOptions();
-    options.withCredentials = true;
-    return this.http.post(apiUrl + '/login', user, options)
+    const requestOptions = {
+      withCredentials: true,
+    };
+    return this.http.post(apiUrl + '/login', user, requestOptions)
       .map(res => {
-        this.setUser(new User(res.json()));
+        this.setUser(new User(res));
         return user;
       });
   }
 
   logout() {
-    const options = new RequestOptions();
-    options.withCredentials = true;
-    return this.http.post(apiUrl + '/logout', {}, options)
+    const requestOptions = {
+      withCredentials: true,
+    };
+    return this.http.post(apiUrl + '/logout', {}, requestOptions)
     .map(res => {
       this.setUser();
       return null;
@@ -62,12 +65,13 @@ export class AuthService {
   }
 
   me() {
-    const options = new RequestOptions();
-    options.withCredentials = true;
-    return this.http.get(apiUrl + '/me', options)
+    const requestOptions = {
+      withCredentials: true,
+    };
+    return this.http.get(apiUrl + '/me', requestOptions)
       .toPromise()
       .then(res => {
-        const user = new User(res.json());
+        const user = new User(res);
         this.setUser(user);
         return user;
       })
