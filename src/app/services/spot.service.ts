@@ -35,7 +35,6 @@ export class SpotService {
   }
 
   filterSpots(newFilter) {
-    console.log(newFilter);
     return this.http.post(apiUrl + '/filter', newFilter);
   }
 }

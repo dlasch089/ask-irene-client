@@ -1,8 +1,28 @@
-<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" *ngIf="formReady" novalidate>
+<form (ngSubmit)="findResult()" #myForm="ngForm" *ngIf="formReady" novalidate>
     
 <div class="field">
     <label>tags</label>
-    <app-form-select [items]="selectors.district" [selected]="filter.district" (onChange)="handleFilterChange('district', $event)"></app-form-select>
+    <app-filter-select [items]="selectors.tags" [selected]="filter.tags" (onChange)="handleFilterChange('tags', $event)"></app-filter-select>
+  </div>
+<div class="field">
+    <label>situation</label>
+    <app-filter-select [items]="selectors.situation" [selected]="filter.situation" (onChange)="handleFilterChange('situation', $event)"></app-filter-select>
+  </div>
+<div class="field">
+    <label>price</label>
+    <app-filter-select [items]="selectors.price" [selected]="filter.price" (onChange)="handleFilterChange('price', $event)"></app-filter-select>
+  </div>
+<div class="field">
+    <label>vibe</label>
+    <app-filter-select [items]="selectors.vibe" [selected]="filter.vibe" (onChange)="handleFilterChange('vibe', $event)"></app-filter-select>
+  </div>
+<div class="field">
+    <label>categories</label>
+    <app-filter-select [items]="selectors.categories" [selected]="filter.categories" (onChange)="handleFilterChange('categories', $event)"></app-filter-select>
+  </div>
+<div class="field">
+    <label>district</label>
+    <app-filter-select [items]="selectors.district" [selected]="filter.district" (onChange)="handleFilterChange('district', $event)"></app-filter-select>
   </div>
 
   <div class="field submit">
@@ -12,7 +32,3 @@
       </div>
     </div>
   </form>
-
-  <p>
-    {{this.result | json}}
-  </p>

@@ -33,6 +33,7 @@ import { MapAutoCompleteComponent } from './components/map-auto-complete/map-aut
 import { AuthSignupComponent } from './components/auth-signup/auth-signup.component';
 import { AuthLoginComponent } from './components/auth-login/auth-login.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { FilterSelectComponent } from './components/filter-select/filter-select.component';
 
 // Routes
 const routes: Routes = [
@@ -59,6 +60,7 @@ const routes: Routes = [
     PageSpotsComponent,
     PageMeComponent,
     FilterComponent,
+    FilterSelectComponent,
   ],
   imports: [
     BrowserModule,

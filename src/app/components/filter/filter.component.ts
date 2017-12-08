@@ -36,16 +36,19 @@ export class FilterComponent implements OnInit {
   }
 
   handleFilterChange(key, value) {
+    const values = Object.values(this.filter);
     this.filter[key] = value; // needs to be in the brackets, because it is a string
+    for (let ix = 0; ix < values.length; ix++) {
+      if (values[ix].length > 0) {
+        this.findResult();
+      }
+    }
   }
 
-  submitForm(form) {
-    this.formReady = false;
+  findResult() {
     this.spotService.filterSpots(this.filter)
       .subscribe((spots) => {
         this.result = spots;
-        this.formReady = true;
-        this.filter = new Filter();
         console.log(this.result);
       });
   }
