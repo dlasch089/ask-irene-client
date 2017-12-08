@@ -18,16 +18,21 @@ export class FilterSelectComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleAdd(value) {
-    event.preventDefault();
-    this.selected.push(value);
-    this.onChange.emit(this.selected);
+  handleChange(value) {
+    if (this.selected.indexOf(value) === -1) {
+      event.preventDefault();
+      this.selected.push(value);
+      this.onChange.emit(this.selected);
+    } else {
+      event.preventDefault();
+      const index = this.selected.indexOf(value)
+      this.selected.splice(index, 1);
+      this.onChange.emit(this.selected);
+
+    }
   }
 
   handleDelete(value, index) {
-    event.preventDefault();
-    this.selected.splice(index, 1);
-    this.onChange.emit(this.selected);
   }
 
 }

@@ -1,37 +1,34 @@
-{{filter.tags | json}}
-<form (ngSubmit)="findResult()" #myForm="ngForm"  novalidate>
-    
-<div class="field">
-    <label>tags</label>
-    <app-filter-select [items]="selectors.tags" [selected]="filter.tags" (onChange)="handleFilterChange('tags', $event)"></app-filter-select>
-  </div>
-<div class="field">
-    <label>situation</label>
-    <app-filter-select [items]="selectors.situation" [selected]="filter.situation" (onChange)="handleFilterChange('situation', $event)"></app-filter-select>
-  </div>
-<div class="field">
-    <label>price</label>
-    <app-filter-select [items]="selectors.price" [selected]="filter.price" (onChange)="handleFilterChange('price', $event)"></app-filter-select>
-  </div>
-<div class="field">
-    <label>vibe</label>
-    <app-filter-select [items]="selectors.vibe" [selected]="filter.vibe" (onChange)="handleFilterChange('vibe', $event)"></app-filter-select>
-  </div>
-<div class="field">
-    <label>categories</label>
-    <app-filter-select [items]="selectors.categories" [selected]="filter.categories" (onChange)="handleFilterChange('categories', $event)"></app-filter-select>
-  </div>
-<div class="field">
-    <label>district</label>
-    <app-filter-select [items]="selectors.district" [selected]="filter.district" (onChange)="handleFilterChange('district', $event)"></app-filter-select>
-  </div>
 
-  <div class="field submit">
-      <button type="submit" [disabled]="processing">Show Results</button>
-      <div *ngIf="feedbackEnabled && myForm.invalid">
-        <p class="validation">there are errors in the form, please review the fields</p>
-      </div>
+
+{{filter | json}}
+<form (ngSubmit)="findResult()" #myForm="ngForm"  novalidate>
+<div class="container">
+  <div class="field">
+      <label>tags</label>
+      <app-filter-select [items]="selectors.tags" [selected]="filter.tags" (onChange)="handleFilterChange('tags', $event)"></app-filter-select>
     </div>
+  <div class="field">
+      <label>situation</label>
+      <app-filter-select [items]="selectors.situation" [selected]="filter.situation" (onChange)="handleFilterChange('situation', $event)"></app-filter-select>
+    </div>
+  <div class="field">
+      <label>price</label>
+      <app-filter-select [items]="selectors.price" [selected]="filter.price" (onChange)="handleFilterChange('price', $event)"></app-filter-select>
+    </div>
+  <div class="field">
+      <label>vibe</label>
+      <app-filter-select [items]="selectors.vibe" [selected]="filter.vibe" (onChange)="handleFilterChange('vibe', $event)"></app-filter-select>
+    </div>
+  <div class="field">
+      <label>categories</label>
+      <app-filter-select [items]="selectors.categories" [selected]="filter.categories" (onChange)="handleFilterChange('categories', $event)"></app-filter-select>
+    </div>
+  <div class="field">
+      <label>district</label>
+      <app-filter-select [items]="selectors.district" [selected]="filter.district" (onChange)="handleFilterChange('district', $event)"></app-filter-select>
+    </div>
+</div>
+ 
   </form>
   
  
