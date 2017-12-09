@@ -1,3 +1,13 @@
 <p>
   map-spots works!
 </p>
+
+<agm-map  *ngIf="spots" [latitude]="lat" [longitude]="long" [scrollwheel]="true" [zoom]="zoom" [styles]='customStyle'>
+  <agm-marker 
+  *ngFor="let spot of spots; let ix = index"
+  [latitude]="spot.location.coordinates[0]" 
+  [longitude]="spot.location.coordinates[1]"
+  [iconUrl]="customIcon"
+  > <agm-info-window >{{spot.name}}</agm-info-window>
+</agm-marker>
+</agm-map>
