@@ -31,6 +31,7 @@ export class FilterComponent implements OnInit {
     this.filter = new Filter();
   }
 
+
   // should emit
   handleFilterChange(key, value) {
     // let count = 0;
@@ -51,6 +52,9 @@ export class FilterComponent implements OnInit {
     // }
   }
 
+  clearFilter() {
+    this.filter = new Filter();
+  }
   // should emit
   findResult() {
     this.spotService.filterSpots(this.filter)

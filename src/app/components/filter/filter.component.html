@@ -1,6 +1,8 @@
 
 
 <pre>{{filter | json}}</pre>
+
+<button (click)='clearFilter()'>Clear you filter</button>
 <form (ngSubmit)="findResult()" #myForm="ngForm"  novalidate>
 <div class="container">
   <div class="field">
