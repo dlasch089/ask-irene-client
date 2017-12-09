@@ -43,12 +43,12 @@ import { MapSpotsComponent } from './components/map-spots/map-spots.component';
 // Routes
 const routes: Routes = [
   {path: '', redirectTo: '/spots', pathMatch: 'full'},
-  {path: 'spots', component: PageSpotsComponent},
+  {path: 'spots', canActivate: [RequireAnonGuard], component: PageSpotsComponent},
   { path: 'auth/login', canActivate: [RequireAnonGuard], component: PageLoginComponent },
   { path: 'auth/signup', canActivate: [RequireAnonGuard], component: PageSignupComponent },
   { path: 'auth/me', canActivate: [RequireAuthGuard], component: PageMeComponent },
-  {path: 'form', component: PageFormComponent},
-  {path: 'list-all', component: PageListAllComponent}
+  {path: 'form', canActivate: [RequireAuthGuard], component: PageFormComponent},
+  {path: 'list-all', canActivate: [RequireAnonGuard], component: PageListAllComponent}
 ];
 
 @NgModule({
