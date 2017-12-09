@@ -9,6 +9,8 @@ import { Spot } from '../../models/spot';
 })
 export class MapSpotsComponent implements OnInit {
 
+  @Input() spots: Object;
+
   lat = 41.397859;
   long = 2.181381;
   zoom = 12;
@@ -264,8 +266,6 @@ export class MapSpotsComponent implements OnInit {
   ];
 
   public customIcon = 'https://png.icons8.com/?id=30568&size=50';
-
-  @Input() spots: Object;
 
   constructor() { }
 
