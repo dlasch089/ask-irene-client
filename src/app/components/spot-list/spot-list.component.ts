@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-spot-list',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./spot-list.component.css']
 })
 export class SpotListComponent implements OnInit {
+
+  @Input() spots: Object;
 
   constructor() { }
 

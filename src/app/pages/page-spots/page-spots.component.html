@@ -6,10 +6,20 @@
 <!-- <a [routerLink]="['/spots/spot/:spotId']" (click)="getRandomSpot()">List All</a> -->
 
 <button (click)="showResults()">Show results</button>
-<app-map-spots *ngIf="resultVisible" [spots]="spots"></app-map-spots>
+<div class="results" *ngIf="resultVisible">
+  <mat-tab-group>
+    <mat-tab label="Map"  (click)="activateMap()">
+        <app-map-spots [spots]="spots" ></app-map-spots>
+    </mat-tab>
+    
+    <mat-tab label="List" >
+      <app-spot-list [spots]="spots" class="spot-list"></app-spot-list>
+    </mat-tab>
+  </mat-tab-group>
+</div>
 <p *ngIf="spots">Your results: {{spots.length}}</p>
-<hr>
-<app-filter [spots]="spots" [selectors]="selectors" *ngIf="filterReady" (onChange)="handleFilterChange($event)"></app-filter>
+  <hr>
+  <app-filter [spots]="spots" [selectors]="selectors" *ngIf="filterReady" (onChange)="handleFilterChange($event)"></app-filter>
 <hr>
 
 

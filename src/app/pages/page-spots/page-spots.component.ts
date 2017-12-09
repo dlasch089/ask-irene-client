@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/map';
 
+import { MatTabGroup } from '@angular/material';
+import { MatTab } from '@angular/material';
+
 import { SpotService } from '../../services/spot.service';
 import { SelectorService } from '../../services/selector.service';
 
@@ -14,6 +17,7 @@ export class PageSpotsComponent implements OnInit {
   spots = null;
   filterReady = false;
   selectors = null;
+  mapActive = false;
 
   resultVisible = false;
 
@@ -40,5 +44,10 @@ export class PageSpotsComponent implements OnInit {
     } else {
       this.resultVisible = true;
     }
+  }
+
+  activateMap() {
+    this.mapActive = true;
+    console.log(this.mapActive);
   }
 }
