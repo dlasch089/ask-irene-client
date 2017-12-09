@@ -4,8 +4,10 @@
 <a [routerLink]="['/auth/signup']">Signup</a>
 <a [routerLink]="['/list-all']">List All</a>
 
+<app-map-spots></app-map-spots>
 <br>
-<!-- {{spots | json}} -->
+{{spots | json}}
+<hr>
 <app-filter [spots]="spots" [selectors]="selectors" *ngIf="filterReady" (onChange)="handleFilterChange($event)"></app-filter>
 
 <!-- ADD THE LIST COMPONENT -->

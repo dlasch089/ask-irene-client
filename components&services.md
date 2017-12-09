@@ -23,6 +23,7 @@ ng g c components/spot-detail
 ng g c components/spot-list
 
 ng g c components/map-auto-complete
+ng g c components/map-spots
 
 # Auth
 
@@ -44,3 +45,5 @@ npm install @agm/core --save
 npm install @types/googlemaps --save-dev
 
 npm install @types/googlemaps --save --dev
+
+npm install @agm/core --save

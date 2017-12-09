@@ -34,19 +34,21 @@ export class FilterComponent implements OnInit {
   // should emit
   handleFilterChange(key, value) {
     // let count = 0;
-    const values = Object.values(this.filter);
+    // const values = Object.values(this.filter);
     this.filter[key] = value; // needs to be in the brackets, because it is a string
-    for (let ix = 0; ix < values.length; ix++) {
-      if (values[ix].length > 0) {
+    // for (let ix = 0; ix < values.length; ix++) {
+      // if (values[ix].length > 0) {
         this.findResult();
-      } else {
-        this.spotService.getAllSpots()
-          .subscribe((result) => {
-            this.spots = result;
-            this.onChange.emit(this.spots);
-          });
-      }
-    }
+        console.log(this.spots);
+      // } else {
+      //   this.spotService.getAllSpots()
+      //     .subscribe((result) => {
+      //       this.spots = result;
+      //       this.onChange.emit(this.spots);
+      //       console.log(this.spots);
+      //     });
+    //   }
+    // }
   }
 
   // should emit
@@ -55,7 +57,6 @@ export class FilterComponent implements OnInit {
     .subscribe((result) => {
       this.spots = result;
       this.onChange.emit(this.spots);
-      console.log(this.spots);
     });
   }
 }
