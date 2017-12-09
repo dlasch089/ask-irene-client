@@ -2,3 +2,8 @@
   display: flex;
   justify-content: flex-start;
 }
+
+mat-tab-group {
+  width: 90vw;
+  object-fit: contain;
+}
