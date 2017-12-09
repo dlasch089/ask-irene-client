@@ -31,30 +31,12 @@ export class FilterComponent implements OnInit {
     this.filter = new Filter();
   }
 
-
   // should emit
   handleFilterChange(key, value) {
-    // let count = 0;
-    // const values = Object.values(this.filter);
     this.filter[key] = value; // needs to be in the brackets, because it is a string
-    // for (let ix = 0; ix < values.length; ix++) {
-      // if (values[ix].length > 0) {
         this.findResult();
-        console.log(this.spots);
-      // } else {
-      //   this.spotService.getAllSpots()
-      //     .subscribe((result) => {
-      //       this.spots = result;
-      //       this.onChange.emit(this.spots);
-      //       console.log(this.spots);
-      //     });
-    //   }
-    // }
   }
 
-  clearFilter() {
-    this.filter = new Filter();
-  }
   // should emit
   findResult() {
     this.spotService.filterSpots(this.filter)
@@ -63,4 +45,15 @@ export class FilterComponent implements OnInit {
       this.onChange.emit(this.spots);
     });
   }
+
+  clearFilter() {
+    this.filter = new Filter();
+    this.spotService.getAllSpots()
+      .subscribe((data) => {
+        this.spots = data;
+        this.onChange.emit(this.spots);
+      });
+  }
+
+
 }

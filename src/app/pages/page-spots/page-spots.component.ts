@@ -15,6 +15,8 @@ export class PageSpotsComponent implements OnInit {
   filterReady = false;
   selectors = null;
 
+  resultVisible = false;
+
   constructor(private spotService: SpotService, private selectorService: SelectorService) { }
 
   ngOnInit() {
@@ -32,4 +34,11 @@ export class PageSpotsComponent implements OnInit {
     this.spots = result;
   }
 
+  showResults() {
+    if (this.resultVisible) {
+      this.resultVisible = false;
+    } else {
+      this.resultVisible = true;
+    }
+  }
 }

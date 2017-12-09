@@ -25,14 +25,10 @@ export class FilterSelectComponent implements OnInit {
       this.onChange.emit(this.selected);
     } else {
       event.preventDefault();
-      const index = this.selected.indexOf(value)
+      const index = this.selected.indexOf(value);
       this.selected.splice(index, 1);
       this.onChange.emit(this.selected);
 
     }
   }
-
-  handleDelete(value, index) {
-  }
-
 }

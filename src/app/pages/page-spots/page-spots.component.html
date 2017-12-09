@@ -5,10 +5,13 @@
 <a [routerLink]="['/list-all']">List All</a>
 <!-- <a [routerLink]="['/spots/spot/:spotId']" (click)="getRandomSpot()">List All</a> -->
 
-<app-map-spots [spots]="spots"></app-map-spots>
+<button (click)="showResults()">Show results</button>
+<app-map-spots *ngIf="resultVisible" [spots]="spots"></app-map-spots>
 <p *ngIf="spots">Your results: {{spots.length}}</p>
 <hr>
 <app-filter [spots]="spots" [selectors]="selectors" *ngIf="filterReady" (onChange)="handleFilterChange($event)"></app-filter>
-<br>
+<hr>
+
+
 
 <!-- ADD THE LIST COMPONENT -->
