@@ -5,30 +5,42 @@
 <button (click)='clearFilter()'>Clear you filter</button>
 <form (ngSubmit)="findResult()" #myForm="ngForm"  novalidate>
 <div class="container">
-  <div class="field">
-      <label>tags</label>
-      <app-filter-select [items]="selectors.tags" [selected]="filter.tags" (onChange)="handleFilterChange('tags', $event)"></app-filter-select>
-    </div>
+    <mat-tab-group>
+        <mat-tab label="What">
+          <app-filter-select [items]="selectors.categories" [selected]="filter.categories" (onChange)="handleFilterChange('categories', $event)"></app-filter-select>
+        </mat-tab>
+        <mat-tab label="Where">
+          <app-filter-select [items]="selectors.district" [selected]="filter.district" (onChange)="handleFilterChange('district', $event)"></app-filter-select>            
+        </mat-tab>
+        <mat-tab label="Situation">
+          <app-filter-select [items]="selectors.situation" [selected]="filter.situation" (onChange)="handleFilterChange('situation', $event)"></app-filter-select>
+        </mat-tab>
+        <mat-tab label="Price">
+          <app-filter-select [items]="selectors.price" [selected]="filter.price" (onChange)="handleFilterChange('price', $event)"></app-filter-select>
+        </mat-tab>
+        <mat-tab label="Vibe">
+          <app-filter-select [items]="selectors.vibe" [selected]="filter.vibe" (onChange)="handleFilterChange('vibe', $event)"></app-filter-select>
+        </mat-tab>
+        <mat-tab label="Bonus">
+            <app-filter-select [items]="selectors.tags" [selected]="filter.tags" (onChange)="handleFilterChange('tags', $event)"></app-filter-select>
+        </mat-tab>
+      </mat-tab-group>
+<!-- 
   <div class="field">
       <label>situation</label>
-      <app-filter-select [items]="selectors.situation" [selected]="filter.situation" (onChange)="handleFilterChange('situation', $event)"></app-filter-select>
     </div>
   <div class="field">
       <label>price</label>
-      <app-filter-select [items]="selectors.price" [selected]="filter.price" (onChange)="handleFilterChange('price', $event)"></app-filter-select>
     </div>
   <div class="field">
       <label>vibe</label>
-      <app-filter-select [items]="selectors.vibe" [selected]="filter.vibe" (onChange)="handleFilterChange('vibe', $event)"></app-filter-select>
     </div>
   <div class="field">
       <label>categories</label>
-      <app-filter-select [items]="selectors.categories" [selected]="filter.categories" (onChange)="handleFilterChange('categories', $event)"></app-filter-select>
     </div>
   <div class="field">
       <label>district</label>
-      <app-filter-select [items]="selectors.district" [selected]="filter.district" (onChange)="handleFilterChange('district', $event)"></app-filter-select>
-    </div>
+    </div> -->
 </div>
  
 </form>

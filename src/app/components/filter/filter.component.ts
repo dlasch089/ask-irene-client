@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatTabGroup } from '@angular/material';
+import { MatTab } from '@angular/material';
 import 'rxjs/add/operator/map';
 
 import { Filter } from '../../models/filter';

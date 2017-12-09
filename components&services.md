@@ -47,3 +47,7 @@ npm install @types/googlemaps --save-dev
 npm install @types/googlemaps --save --dev
 
 npm install @agm/core --save
+
+# Material
+npm install --save @angular/material @angular/cdk
+npm install --save @angular/animations
