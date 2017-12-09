@@ -3,9 +3,13 @@
 <a [routerLink]="['/auth/login']">Login</a>
 <a [routerLink]="['/auth/signup']">Signup</a>
 <a [routerLink]="['/list-all']">List All</a>
+<!-- <a [routerLink]="['/spots/spot/:spotId']" (click)="getRandomSpot()">List All</a> -->
 
 <br>
-<!-- {{spots | json}} -->
+<pre>{{spots | json}}</pre>
+<br>
+<br>
+<br>
 <app-filter [spots]="spots" [selectors]="selectors" *ngIf="filterReady" (onChange)="handleFilterChange($event)"></app-filter>
 
 <!-- ADD THE LIST COMPONENT -->

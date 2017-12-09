@@ -21,8 +21,11 @@ export class SpotService {
   }
 
   addSpot(newSpot) {
+    const requestOptions = {
+      withCredentials: true
+    };
     console.log(newSpot);
-    return this.http.post(apiUrl + '/', newSpot);
+    return this.http.post(apiUrl + '/', newSpot, requestOptions);
   }
 
   deleteSpot(spotId) {
@@ -36,6 +39,10 @@ export class SpotService {
 
   filterSpots(newFilter) {
     return this.http.post(apiUrl + '/filter', newFilter);
+  }
+
+  getRandom() {
+    return this.http.get(apiUrl + '/random');
   }
 }
 
