@@ -5,11 +5,10 @@
 <a [routerLink]="['/list-all']">List All</a>
 <!-- <a [routerLink]="['/spots/spot/:spotId']" (click)="getRandomSpot()">List All</a> -->
 
+<app-map-spots></app-map-spots>
 <br>
-<pre>{{spots | json}}</pre>
-<br>
-<br>
-<br>
+{{spots | json}}
+<hr>
 <app-filter [spots]="spots" [selectors]="selectors" *ngIf="filterReady" (onChange)="handleFilterChange($event)"></app-filter>
 
 <!-- ADD THE LIST COMPONENT -->
