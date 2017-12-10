@@ -46,7 +46,6 @@ export class FilterSelectComponent implements OnInit {
       const index = this.selected.indexOf(value);
       this.selected.splice(index, 1);
       this.onChange.emit(this.selected);
-
     }
   }
 }

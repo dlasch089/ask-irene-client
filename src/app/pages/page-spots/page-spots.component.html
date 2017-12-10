@@ -19,5 +19,5 @@
     </mat-tab>
   </mat-tab-group>
 </div>
-  <app-filter [spots]="spots" [selectors]="selectors" *ngIf="filterReady && filterVisible" (onChange)="handleFilterChange($event)"></app-filter>
+  <app-filter [spots]="spots" [selectors]="selectors" *ngIf="filterReady" (onChange)="handleFilterChange($event)"></app-filter>
 <hr>
