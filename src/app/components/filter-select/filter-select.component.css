@@ -17,7 +17,7 @@ li {
   margin:0px;
 } 
 
-.regular-checkbox:checked:focus {
+.regular-checkbox:checked {
   background-color:#f35742;
 }
 
