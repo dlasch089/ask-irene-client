@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 
 import { Filter } from '../../models/filter';
 // include the selector-model
+import { Flag } from '../../models/flags';
 
 import { SpotService } from '../../services/spot.service';
 import { SelectorService } from '../../services/selector.service';
@@ -19,13 +20,14 @@ export class FilterComponent implements OnInit {
 
 
   filter: Filter;
+  flags: Array<Flag> = [];
 
   feedbackEnabled = false;
   processing = false;
 
   @Input() spots: Object;
   @Input() selectors = null;
-  
+
   @Output() onChange = new EventEmitter<Object>();
 
   constructor(private spotService: SpotService, private selectorService: SelectorService, private router: Router ) { }
@@ -40,6 +42,11 @@ export class FilterComponent implements OnInit {
         this.findResult();
   }
 
+  handleCheckChange(checkItemStatus) {
+    this.flags.push(checkItemStatus);
+    console.log(this.flags);
+  }
+
   // should emit
   findResult() {
     this.spotService.filterSpots(this.filter)
@@ -51,6 +58,11 @@ export class FilterComponent implements OnInit {
 
   clearFilter() {
     this.filter = new Filter();
+    for (let ix = 0; ix < this.flags.length; ix++) {
+      this.flags[ix].checked = false;
+    }
+    this.flags = [];
+    console.log(this.flags);
     this.spotService.getAllSpots()
       .subscribe((data) => {
         this.spots = data;
