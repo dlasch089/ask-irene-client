@@ -10,22 +10,22 @@
   <div class="container">
     <mat-tab-group class='tab'>
       <mat-tab label="What">
-        <app-filter-select [items]="selectors.categories" [selected]="filter.categories" (onChange)="handleFilterChange('categories', $event)"></app-filter-select>
+        <app-filter-select [items]="selectors.categories" [selected]="filter.categories" (onChange)="handleFilterChange('categories', $event)" (onCheck)="handleCheckChange($event)"></app-filter-select>
       </mat-tab>
       <mat-tab label="Where">
-        <app-filter-select [items]="selectors.district" [selected]="filter.district" (onChange)="handleFilterChange('district', $event)"></app-filter-select>            
+        <app-filter-select [items]="selectors.district" [selected]="filter.district" (onChange)="handleFilterChange('district', $event)" (onCheck)="handleCheckChange($event)"></app-filter-select>            
       </mat-tab>
       <mat-tab label="Situation">
-        <app-filter-select [items]="selectors.situation" [selected]="filter.situation" (onChange)="handleFilterChange('situation', $event)"></app-filter-select>
+        <app-filter-select [items]="selectors.situation" [selected]="filter.situation" (onChange)="handleFilterChange('situation', $event)" (onCheck)="handleCheckChange($event)"></app-filter-select>
       </mat-tab>
       <mat-tab label="Price">
-        <app-filter-select [items]="selectors.price" [selected]="filter.price" (onChange)="handleFilterChange('price', $event)"></app-filter-select>
+        <app-filter-select [items]="selectors.price" [selected]="filter.price" (onChange)="handleFilterChange('price', $event)" (onCheck)="handleCheckChange($event)"></app-filter-select>
       </mat-tab>
       <mat-tab label="Vibe">
-        <app-filter-select [items]="selectors.vibe" [selected]="filter.vibe" (onChange)="handleFilterChange('vibe', $event)"></app-filter-select>
+        <app-filter-select [items]="selectors.vibe" [selected]="filter.vibe" (onChange)="handleFilterChange('vibe', $event)" (onCheck)="handleCheckChange($event)"></app-filter-select>
       </mat-tab>
       <mat-tab label="Bonus">
-        <app-filter-select [items]="selectors.tags" [selected]="filter.tags" (onChange)="handleFilterChange('tags', $event)"></app-filter-select>
+        <app-filter-select [items]="selectors.tags" [selected]="filter.tags" (onChange)="handleFilterChange('tags', $event)" (onCheck)="handleCheckChange($event)"></app-filter-select>
       </mat-tab>
     </mat-tab-group>
   </div>

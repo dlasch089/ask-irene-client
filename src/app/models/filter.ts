@@ -1,10 +1,10 @@
 // names/keys taken from google spreadsheet
 
 export class Filter {
-  district: Array<string> = [];
-  categories: Array<string> = [];
-  situation: Array<string> = [];
-  price: Array<string> = [];
-  vibe: Array<string> = [];
-  tags: Array<string> = [];
+  district: Array<object> = [];
+  categories: Array<object> = [];
+  situation: Array<object> = [];
+  price: Array<object> = [];
+  vibe: Array<object> = [];
+  tags: Array<object> = [];
 }
