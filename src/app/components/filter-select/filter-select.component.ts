@@ -20,11 +20,11 @@ export class FilterSelectComponent implements OnInit {
 
   handleChange(value) {
     if (this.selected.indexOf(value) === -1) {
-      event.preventDefault();
+      // event.preventDefault();
       this.selected.push(value);
       this.onChange.emit(this.selected);
     } else {
-      event.preventDefault();
+      // event.preventDefault();
       const index = this.selected.indexOf(value);
       this.selected.splice(index, 1);
       this.onChange.emit(this.selected);

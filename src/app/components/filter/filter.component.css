@@ -13,14 +13,18 @@
   }
   
 .mat-ripple {
+  display: none;
   padding: 0;
 }
 
 .tab {
-  background: pink;
-  width: 100%;
+  max-width: 100%;
 }
-  .mat-tab-label {
+
+.tab > mat-tab {
+  background-color: red;
+}
+  .mat-tab-labels > div {
     padding: 0;
     min-width: 50px;
   }

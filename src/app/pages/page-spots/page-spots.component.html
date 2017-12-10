@@ -19,10 +19,5 @@
     </mat-tab>
   </mat-tab-group>
 </div>
-<!-- <p *ngIf="spots">Your results: {{spots.length}}</p> -->
-<app-filter [spots]="spots" [selectors]="selectors" *ngIf="filterReady && filterVisible" (onChange)="handleFilterChange($event)"></app-filter>
+  <app-filter [spots]="spots" [selectors]="selectors" *ngIf="filterReady && filterVisible" (onChange)="handleFilterChange($event)"></app-filter>
 <hr>
-
-
-
-<!-- ADD THE LIST COMPONENT -->

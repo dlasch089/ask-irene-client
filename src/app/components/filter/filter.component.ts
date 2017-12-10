@@ -17,6 +17,7 @@ import { SelectorService } from '../../services/selector.service';
 })
 export class FilterComponent implements OnInit {
 
+
   filter: Filter;
 
   feedbackEnabled = false;
@@ -24,7 +25,7 @@ export class FilterComponent implements OnInit {
 
   @Input() spots: Object;
   @Input() selectors = null;
-
+  
   @Output() onChange = new EventEmitter<Object>();
 
   constructor(private spotService: SpotService, private selectorService: SelectorService, private router: Router ) { }

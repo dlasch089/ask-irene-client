@@ -11,9 +11,6 @@
   <div class="container">
     <mat-tab-group class='tab'>
       <mat-tab label="What">
-          <ng-template mat-tab-label>
-              ⭐
-            </ng-template>
         <app-filter-select [items]="selectors.categories" [selected]="filter.categories" (onChange)="handleFilterChange('categories', $event)"></app-filter-select>
       </mat-tab>
       <mat-tab label="Where">

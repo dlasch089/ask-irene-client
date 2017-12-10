@@ -3,6 +3,9 @@
 
 <ul>
   <li *ngFor="let item of items">
-    <button (click)="handleChange(item)">{{item}}</button>
+    <label for="{{item}}" (click)="handleChange(item)">
+      {{item}}
+      <input type="checkbox">
+    </label>
   </li>
 </ul>
