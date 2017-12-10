@@ -57,6 +57,4 @@ export class FilterComponent implements OnInit {
         this.onChange.emit(this.spots);
       });
   }
-
-
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FormsModule } from '@angular/forms'
+
 
 @Component({
   selector: 'app-filter-select',
@@ -13,17 +15,33 @@ export class FilterSelectComponent implements OnInit {
 
   @Output() onChange = new EventEmitter<Array<string>>();
 
+  tags: any = [];
+
   constructor() { }
 
   ngOnInit() {
+    this.addCheckedValue (this.items);
   }
 
-  handleChange(value) {
+  addCheckedValue(itemArray): Array<object> {
+    for (let ix = 0; ix < itemArray.length; ix++) {
+      const itemObject: Object = {
+        name: itemArray[ix],
+        checked: false
+      };
+      this.tags.push(itemObject);
+    }
+    return this.tags;
+  }
+
+  handleChange(value, ix) {
     if (this.selected.indexOf(value) === -1) {
+      this.tags[ix].checked = true;
       // event.preventDefault();
       this.selected.push(value);
       this.onChange.emit(this.selected);
     } else {
+      this.tags[ix].checked = false;
       // event.preventDefault();
       const index = this.selected.indexOf(value);
       this.selected.splice(index, 1);

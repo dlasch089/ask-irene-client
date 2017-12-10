@@ -1,25 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
 /* @import '~@angular/material/prebuilt-themes/pink-bluegrey.css'; */
 
+
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  }
-  *, *:before, *:after {
+}
+*, *:before, *:after {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
   box-sizing: inherit;
-  }
+}
 
-  /* div {
-    border: 1px solid #104300;
-  } */
+body {
+  background-color: #f9eee4;
+}
+/* div {
+  border: 1px solid #104300;
+} */
 
-  /* -- forms --- error handlers -- */
+h1, h2 {
+  font-family: 'Abril Fatface', cursive;
+  color: #365897;
+}
+
+label, p, a, span {
+  font-family: 'Poppins', sans-serif;
+  color: #f35742;
+}
+
+button {
+  color: #fdcfd2;
+  background-color: #f35742;
+  border: none;
+  padding: 2%;
+}
+
+
+/* -- forms --- error handlers -- */
 
 form .is-processing {
-	opacity: 0.5;
+  opacity: 0.5;
 }
 
 form .field {

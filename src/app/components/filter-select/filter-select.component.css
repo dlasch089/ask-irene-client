@@ -8,3 +8,19 @@ ul {
 li {
   list-style: none;
 }
+
+.regular-checkbox {
+  -webkit-appearance: none;
+  border: 1px solid #f35742;
+  padding: 1%;
+  border-radius: 8px;
+  margin:0px;
+} 
+
+.regular-checkbox:checked:focus {
+  background-color:#f35742;
+}
+
+
+
+.filter-item {}

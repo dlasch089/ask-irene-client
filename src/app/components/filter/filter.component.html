@@ -1,4 +1,5 @@
 
+  <button (click)='clearFilter()'>Clear you filter</button>
 
   <span *ngFor='let categories of filter.categories'>{{categories}}</span>
   <span *ngFor='let district of filter.district'>{{district}}</span>
@@ -6,7 +7,6 @@
   <span *ngFor='let price of filter.price'>{{price}}</span>
   <span *ngFor='let vibe of filter.vibe'>{{vibe}}</span>
   <span *ngFor='let tags of filter.tags'>{{tags}}</span>
-<button (click)='clearFilter()'>Clear you filter</button>
 <form (ngSubmit)="findResult()" #myForm="ngForm"  novalidate>
   <div class="container">
     <mat-tab-group class='tab'>
