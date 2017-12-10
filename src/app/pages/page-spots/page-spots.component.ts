@@ -43,11 +43,11 @@ export class PageSpotsComponent implements OnInit {
   showResults(event) {
     if (this.resultVisible) {
       this.resultVisible = false;
-      this.filterVisible = true;
+      // this.filterVisible = true;
       event.srcElement.innerHTML = `Show results: `;
     } else {
       this.resultVisible = true;
-      this.filterVisible = false;
+      // this.filterVisible = false;
       event.srcElement.innerHTML = 'Edit filters';
     }
   }

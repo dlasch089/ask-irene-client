@@ -6,7 +6,7 @@
 <!-- <a [routerLink]="['/spots/spot/:spotId']" (click)="getRandomSpot()">List All</a> -->
 
 <div class="result-button" *ngIf='spots'>
-  <button (click)="showResults($event)">Show results: </button><span *ngIf='filterVisible'>{{spots.length}}</span>
+  <button (click)="showResults($event)" (click)="filterVisible = !filterVisible" >Show results: </button><span [ngClass]="filterVisible ? 'filter-visible' : 'filter-hidden'">{{spots.length}}</span>
 </div>
 <div class="results" *ngIf="resultVisible">
   <mat-tab-group>
@@ -19,5 +19,5 @@
     </mat-tab>
   </mat-tab-group>
 </div>
-  <app-filter [spots]="spots" [selectors]="selectors" *ngIf="filterReady" (onChange)="handleFilterChange($event)"></app-filter>
+  <app-filter [spots]="spots" [selectors]="selectors" *ngIf="filterReady" (onChange)="handleFilterChange($event)" [ngClass]="filterVisible ? 'filter-visible' : 'filter-hidden'"></app-filter>
 <hr>
