@@ -11,7 +11,7 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Ask-Irene-App';
+  title = 'Ask Irene';
 
   loading = true;
   anon: boolean;
