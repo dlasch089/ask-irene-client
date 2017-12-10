@@ -9,7 +9,7 @@
   <span *ngFor='let tags of filter.tags'>{{tags}}</span>
 <form (ngSubmit)="findResult()" #myForm="ngForm"  novalidate>
   <div class="container">
-    <mat-tab-group>
+    <mat-tab-group class='tab'>
       <mat-tab label="What">
           <ng-template mat-tab-label>
               ⭐

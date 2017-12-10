@@ -5,21 +5,22 @@
 <a [routerLink]="['/list-all']">List All</a>
 <!-- <a [routerLink]="['/spots/spot/:spotId']" (click)="getRandomSpot()">List All</a> -->
 
-<button (click)="showResults()">Show results</button>
+<div class="result-button" *ngIf='spots'>
+  <button (click)="showResults($event)">Show results: </button><span *ngIf='filterVisible'>{{spots.length}}</span>
+</div>
 <div class="results" *ngIf="resultVisible">
   <mat-tab-group>
     <mat-tab label="Map"  (click)="activateMap()">
         <app-map-spots [spots]="spots" ></app-map-spots>
     </mat-tab>
     
-    <mat-tab label="List" >
+    <mat-tab  label="List" >
       <app-spot-list [spots]="spots" class="spot-list"></app-spot-list>
     </mat-tab>
   </mat-tab-group>
 </div>
-<p *ngIf="spots">Your results: {{spots.length}}</p>
-  <hr>
-  <app-filter [spots]="spots" [selectors]="selectors" *ngIf="filterReady" (onChange)="handleFilterChange($event)"></app-filter>
+<!-- <p *ngIf="spots">Your results: {{spots.length}}</p> -->
+<app-filter [spots]="spots" [selectors]="selectors" *ngIf="filterReady && filterVisible" (onChange)="handleFilterChange($event)"></app-filter>
 <hr>
 
 

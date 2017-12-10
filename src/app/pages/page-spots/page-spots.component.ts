@@ -20,6 +20,7 @@ export class PageSpotsComponent implements OnInit {
   mapActive = false;
 
   resultVisible = false;
+  filterVisible: Boolean;
 
   constructor(private spotService: SpotService, private selectorService: SelectorService) { }
 
@@ -31,6 +32,7 @@ export class PageSpotsComponent implements OnInit {
     .then((data) => {
       this.filterReady = true;
       this.selectors = data;
+      this.filterVisible = true;
     });
   }
 
@@ -38,11 +40,15 @@ export class PageSpotsComponent implements OnInit {
     this.spots = result;
   }
 
-  showResults() {
+  showResults(event) {
     if (this.resultVisible) {
       this.resultVisible = false;
+      this.filterVisible = true;
+      event.srcElement.innerHTML = `Show results: `;
     } else {
       this.resultVisible = true;
+      this.filterVisible = false;
+      event.srcElement.innerHTML = 'Edit filters';
     }
   }
 
