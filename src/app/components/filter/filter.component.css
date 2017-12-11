@@ -7,9 +7,9 @@
   font-family: 'Comic Sans MS';
 }
 
-  mat-tab-group {
-    width: 100vw;
-    object-fit: contain;
+.mat-tab-group {
+  width: 100vw;
+  object-fit: contain;
   }
   
 .mat-ripple {
@@ -17,31 +17,17 @@
   padding: 0;
 }
 
-.tab {
-  max-width: 100%;
-}
-
-.tab > mat-tab {
-  background-color: red;
-}
-  .mat-tab-labels > div {
-    padding: 0;
-    min-width: 50px;
+@media (max-width: 600px) {
+  .tab {
+    width: 100%;
   }
-  .mat-tab-header {
-    width: 100vw;
-  }
-
-
-.mat-tab-body {
-  display: block;
-  overflow: hidden;
 }
 
-.mat-tab-body-active {
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: auto;
-    z-index: 1;
-    flex-grow: 1;
+
+
+
+
+ 
+  .mat-tab-label .mat-ripple .mat-tab-label-active .ng-star-inserted {
+    background-color: red !important;
   }

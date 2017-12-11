@@ -22,7 +22,7 @@ export class PageSpotsComponent implements OnInit {
   mapActive = false;
 
   resultVisible = false;
-  filterVisible: Boolean;
+  filterVisible = true;
 
   constructor(
     private spotService: SpotService, 
@@ -40,7 +40,6 @@ export class PageSpotsComponent implements OnInit {
     .then((data) => {
       this.filterReady = true;
       this.selectors = data;
-      this.filterVisible = true;
     });
   }
 
