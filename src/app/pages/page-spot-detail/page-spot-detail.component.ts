@@ -3,8 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { SpotService } from '../../services/spot.service';
+import { AuthService } from '../../services/auth.service';
 
 import { Spot } from '../../models/spot';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-page-spot-detail',
@@ -15,8 +17,13 @@ export class PageSpotDetailComponent implements OnInit {
 
   spot: Spot = null;
 
+  user: User;
+
+  addedtoFavorites: Boolean = false;
+
   constructor(private spotService: SpotService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -24,10 +31,21 @@ export class PageSpotDetailComponent implements OnInit {
       this.spotService.getSpotDetail(params.spotId)
         .subscribe((data) => this.spot = data);
     });
+
+    this.authService.me().then((user) => {
+      if (!user) {
+        return true;
+      }
+      this.user = user;
+    });
   }
 
   onFavAdd() {
-    console.log('Add to fav: ' + this.spot._id);
+    this.authService.updateFavs(this.spot._id)
+      .subscribe((message) => {
+        this.addedtoFavorites = message.message;
+        console.log(this.user.favorites);
+      });
   }
 
   onSaveAdd() {

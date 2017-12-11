@@ -1,6 +1,7 @@
 .headline-bubble {
+  text-align: center;
   background-color: #fdcfd2;
-  width: 50%;
+max-width: 70%;
   border-radius: 8px;
   padding: 2% 2%;
   margin: 3% 0;

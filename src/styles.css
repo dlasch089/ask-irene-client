@@ -20,7 +20,7 @@ body {
   border: 1px solid #104300;
 } */
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Abril Fatface', cursive;
   color: #365897;
 }
@@ -31,6 +31,7 @@ label, p, a, span {
 }
 
 button {
+  font-family: 'Poppins', sans-serif;
   color: #fdcfd2;
   background-color: #f35742;
   border: none;
