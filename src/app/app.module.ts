@@ -28,6 +28,7 @@ import { PageListAllComponent } from './pages/page-list-all/page-list-all.compon
 import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { PageSignupComponent } from './pages/page-signup/page-signup.component';
 import { PageMeComponent } from './pages/page-me/page-me.component';
+import { PageHomeComponent } from './pages/page-home/page-home.component';
 
 // Components
 import { FormSelectComponent } from './components/form-select/form-select.component';
@@ -42,7 +43,7 @@ import { MapSpotsComponent } from './components/map-spots/map-spots.component';
 
 // Routes
 const routes: Routes = [
-  {path: '', redirectTo: '/spots', pathMatch: 'full'},
+  {path: '', component: PageHomeComponent},
   {path: 'spots', component: PageSpotsComponent},
   { path: 'auth/login', canActivate: [RequireAnonGuard], component: PageLoginComponent },
   { path: 'auth/signup', canActivate: [RequireAnonGuard], component: PageSignupComponent },
@@ -64,6 +65,7 @@ const routes: Routes = [
     AuthLoginComponent,
     PageSpotsComponent,
     PageMeComponent,
+    PageHomeComponent,
     FilterComponent,
     FilterSelectComponent,
     SpotListComponent,
