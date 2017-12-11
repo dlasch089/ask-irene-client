@@ -31,11 +31,7 @@ export class PageSpotsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.authService.me().then((user) => {
-      if (!user) {
-        return true;
-      }
-    });
+
 
   this.spotService.getAllSpots()
     .subscribe((data) => this.spots = data);

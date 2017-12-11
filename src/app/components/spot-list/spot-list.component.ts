@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { Router, ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-spot-list',
   templateUrl: './spot-list.component.html',
@@ -9,7 +11,7 @@ export class SpotListComponent implements OnInit {
 
   @Input() spots: Object;
 
-  constructor() { }
+  constructor(router: Router, route: ActivatedRoute,) { }
 
   ngOnInit() {
   }

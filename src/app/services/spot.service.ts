@@ -20,6 +20,13 @@ export class SpotService {
     return this.http.get(apiUrl + '/', requestOptions);
   }
 
+  getSpotDetail(spotId): Observable<any> {
+    const requestOptions = {
+      withCredentials: true
+    };
+    return this.http.get(apiUrl + `/${spotId}`, requestOptions);
+  }
+
   addSpot(newSpot) {
     const requestOptions = {
       withCredentials: true

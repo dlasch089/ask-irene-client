@@ -23,6 +23,12 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.authService.me().then((user) => {
+      if (!user) {
+        return true;
+      }
+    });
+
     this.authService.userChange$.subscribe((user) => {
       this.loading = false;
       this.user = user;
