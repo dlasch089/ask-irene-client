@@ -4,6 +4,8 @@ import 'rxjs/add/operator/map';
 import { MatTabGroup } from '@angular/material';
 import { MatTab } from '@angular/material';
 
+import { AuthService } from '../../services/auth.service';
+
 import { SpotService } from '../../services/spot.service';
 import { SelectorService } from '../../services/selector.service';
 
@@ -22,9 +24,19 @@ export class PageSpotsComponent implements OnInit {
   resultVisible = false;
   filterVisible: Boolean;
 
-  constructor(private spotService: SpotService, private selectorService: SelectorService) { }
+  constructor(
+    private spotService: SpotService, 
+    private selectorService: SelectorService,
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
+    this.authService.me().then((user) => {
+      if (!user) {
+        return true;
+      }
+    });
+
   this.spotService.getAllSpots()
     .subscribe((data) => this.spots = data);
 

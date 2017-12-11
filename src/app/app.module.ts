@@ -39,6 +39,7 @@ import { FilterSelectComponent } from './components/filter-select/filter-select.
 import { SpotListComponent } from './components/spot-list/spot-list.component';
 import { SpotDetailComponent } from './components/spot-detail/spot-detail.component';
 import { MapSpotsComponent } from './components/map-spots/map-spots.component';
+import { PageSpotDetailComponent } from './pages/page-spot-detail/page-spot-detail.component';
 
 // Routes
 const routes: Routes = [
@@ -69,6 +70,7 @@ const routes: Routes = [
     SpotListComponent,
     SpotDetailComponent,
     MapSpotsComponent,
+    PageSpotDetailComponent,
   ],
   imports: [
     BrowserModule,

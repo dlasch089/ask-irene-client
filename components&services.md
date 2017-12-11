@@ -13,6 +13,7 @@ ng g c pages/page-form
 ng g c pages/page-list-all // Needs to be deleted again!
 ng g c pages/page-spots
  ng g c pages/page-me
+ ng g c pages/page-spot-detail
 
 ng g c components/spot-list
 ng g c components/spot-list-detail
