@@ -85,13 +85,4 @@ export class AuthService {
   getUser() {
     return this.user;
   }
-
-  updateFavs(spotId) {
-    const requestOptions = {
-      withCredentials: true,
-      spotId: spotId,
-      user: this.user
-    };
-    return this.http.post(apiUrl + `/me/favourites`, requestOptions);
-  }
 }

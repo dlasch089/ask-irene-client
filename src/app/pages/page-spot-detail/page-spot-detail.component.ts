@@ -5,6 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { SpotService } from '../../services/spot.service';
 import { AuthService } from '../../services/auth.service';
 
+import { UserService } from '../../services/user.service';
+
 import { Spot } from '../../models/spot';
 import { User } from '../../models/user';
 
@@ -23,7 +25,8 @@ export class PageSpotDetailComponent implements OnInit {
 
   constructor(private spotService: SpotService,
     private activatedRoute: ActivatedRoute,
-    private authService: AuthService
+    private authService: AuthService,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
@@ -41,14 +44,17 @@ export class PageSpotDetailComponent implements OnInit {
   }
 
   onFavAdd() {
-    this.authService.updateFavs(this.spot._id)
+    this.userService.updateFavs(this.spot._id, this.user)
       .subscribe((message) => {
         console.log(message);
       });
   }
 
   onSaveAdd() {
-    console.log('Add to save: ' + this.spot._id);
+    this.userService.updateWishList(this.spot._id, this.user)
+    .subscribe((message) => {
+      console.log(message);
+    });
   }
 
 }
