@@ -20,6 +20,7 @@ import { RequireAnonGuard } from './guards/require-anon.guard';
 import { SpotService } from './services/spot.service';
 import { SelectorService } from './services/selector.service';
 import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
 
 // Pages
 import { PageSpotsComponent } from './pages/page-spots/page-spots.component';
@@ -94,7 +95,8 @@ const routes: Routes = [
     SelectorService,
     AuthService,
     RequireAuthGuard,
-    RequireAnonGuard
+    RequireAnonGuard,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
