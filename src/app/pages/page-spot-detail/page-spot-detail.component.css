@@ -1,3 +1,32 @@
+.headline-bubble {
+  background-color: #fdcfd2;
+  width: 50%;
+  border-radius: 8px;
+  padding: 2% 2%;
+  margin: 3% 0;
+}
+
+.triangle-headline {
+  margin-left: 3%;
+  width: 2rem;
+  height: 2rem;
+  background-color: inherit;
+  margin-top: -11.1px;
+  margin-right: 1.8rem;
+  margin-bottom: 9px;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-top: 2rem solid #fdcfd2;
+}
+
+.headline-bubble h1 {
+  margin: 0;
+}
+
+.spot-detail {
+  padding: 0 3%;
+}
+
 .images-container {
   display: flex;
   justify-content: space-around;
@@ -10,10 +39,28 @@ img {
 }
 
 .description-bubble {
+  border-radius: 8px;
   background-color: #fdcfd2;
   width: 90%;
-  padding: 2%;
-  margin: 4% 1%;
+  padding: 4%;
+  margin-top: 4%;
+}
+
+.description-bubble p {
+  color: #3b5892;
+  line-height: 2;
+}
+
+.triangle-description {
+  margin-left: 3%;
+  width: 2rem;
+  height: 2rem;
+  background-color: inherit;
+  margin-top: -2.1px;
+  margin-right: 1.8rem;
+  border-left: 1rem solid transparent;
+	border-right: 1rem solid transparent;
+	border-top: 2rem solid #fdcfd2;
 }
 
 .spot-specitications {
@@ -24,6 +71,7 @@ img {
 }
 
 .spot-specitications span {
+  color: #3b5892;
   background-color: #fdcfd2;
   padding: 2%;
   border-radius: 8px;

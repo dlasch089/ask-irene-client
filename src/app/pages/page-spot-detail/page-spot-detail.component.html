@@ -3,17 +3,19 @@
   <div class="headline-bubble">
     <h1>{{spot.name}}</h1>
   </div>
-
+  <div class="triangle-headline"></div>
+  
   <div class="images-container">
     <img src="https://instagram.com/p/{{spot.images[0]}}/media/?size=t" alt="spot.name"  *ngIf="spot.images[0]">
     <img src="https://instagram.com/p/{{spot.images[1]}}/media/?size=t" alt="spot.name"  *ngIf="spot.images[1]">
     <img src="https://instagram.com/p/{{spot.images[2]}}/media/?size=t" alt="spot.name"  *ngIf="spot.images[2]">
   </div>
-
-
-<div class="description-bubble">
-  <p>{{spot.description}}</p>
-</div>
+  
+  
+  <div class="description-bubble">
+    <p>{{spot.description}}</p>
+  </div>
+  <div class="triangle-description"></div>
 
 <div class="spot-specitications" *ngIf="spot.tags ">
   <span>{{spot.price[0]}}</span>
@@ -30,8 +32,8 @@
 </div>
 
 <div class="add-buttons-container">
-    <button class="add-btn">add to favs</button>
-    <button class="add-btn">Add to WishList</button>
+    <button class="add-btn" (click)="onFavAdd()">add to favs</button>
+    <button class="add-btn" (click)="onSaveAdd()">Add to WishList</button>
 </div>
 
 <div class="back-button-container">

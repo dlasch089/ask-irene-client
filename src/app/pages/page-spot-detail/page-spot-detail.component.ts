@@ -26,4 +26,12 @@ export class PageSpotDetailComponent implements OnInit {
     });
   }
 
+  onFavAdd() {
+    console.log('Add to fav: ' + this.spot._id);
+  }
+
+  onSaveAdd() {
+    console.log('Add to save: ' + this.spot._id);
+  }
+
 }
