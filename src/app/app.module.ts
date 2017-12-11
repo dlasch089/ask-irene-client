@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 // Guards
 import { RequireAuthGuard } from './guards/require-auth.guard';
 import { RequireAnonGuard } from './guards/require-anon.guard';
+import { RequireAdminGuard } from './guards/require-admin.guard';
 
 // Services
 import { SpotService } from './services/spot.service';
@@ -52,8 +53,8 @@ const routes: Routes = [
   { path: 'auth/login', canActivate: [RequireAnonGuard], component: PageLoginComponent },
   { path: 'auth/signup', canActivate: [RequireAnonGuard], component: PageSignupComponent },
   { path: 'auth/me', canActivate: [RequireAuthGuard], component: PageMeComponent },
-  {path: 'form', canActivate: [RequireAuthGuard], component: PageFormComponent},
-  {path: 'list-all', component: PageListAllComponent}
+  {path: 'form', canActivate: [RequireAdminGuard], component: PageFormComponent},
+  {path: 'list-all', canActivate: [RequireAdminGuard], component: PageListAllComponent}
 ];
 
 @NgModule({
@@ -98,6 +99,7 @@ const routes: Routes = [
     AuthService,
     RequireAuthGuard,
     RequireAnonGuard,
+    RequireAdminGuard,
     UserService
   ],
   bootstrap: [AppComponent]
