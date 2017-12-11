@@ -43,8 +43,7 @@ export class PageSpotDetailComponent implements OnInit {
   onFavAdd() {
     this.authService.updateFavs(this.spot._id)
       .subscribe((message) => {
-        this.addedtoFavorites = message.message;
-        console.log(this.user.favorites);
+        console.log(message);
       });
   }
 
