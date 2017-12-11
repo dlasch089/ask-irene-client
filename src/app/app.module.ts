@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 // Guards
 import { RequireAuthGuard } from './guards/require-auth.guard';
 import { RequireAnonGuard } from './guards/require-anon.guard';
+import { RequireAdminGuard } from './guards/require-admin.guard';
 
 // Services
 import { SpotService } from './services/spot.service';
@@ -96,7 +97,8 @@ const routes: Routes = [
     SelectorService,
     AuthService,
     RequireAuthGuard,
-    RequireAnonGuard
+    RequireAnonGuard,
+    RequireAdminGuard
   ],
   bootstrap: [AppComponent]
 })
