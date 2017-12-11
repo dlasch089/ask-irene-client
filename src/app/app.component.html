@@ -8,13 +8,8 @@
       </a> 
     </div>
 
-    <div>
-      <!-- <button mat-icon-button [matMenuTriggerFor]="menu"> -->
-        <img [matMenuTriggerFor]="menu" mat-icon-button src='../assets/images/menu.png' alt="">
-          <!-- <i   class="material-icons" 
-          src="/"></i>         -->
-          <!-- <mat-icon>more_vert</mat-icon> -->
-      <!-- </button> -->
+    <div [ngClass]="{'is-user': user, 'is-anon': anon, 'is-admin': admin}">
+      <img [matMenuTriggerFor]="menu" mat-icon-button src='../assets/images/menu.png' alt="">
       <mat-menu #menu="matMenu">
         <div *ngIf="!loading && !!user">
           <button mat-menu-item>

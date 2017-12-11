@@ -53,8 +53,8 @@ const routes: Routes = [
   { path: 'auth/login', canActivate: [RequireAnonGuard], component: PageLoginComponent },
   { path: 'auth/signup', canActivate: [RequireAnonGuard], component: PageSignupComponent },
   { path: 'auth/me', canActivate: [RequireAuthGuard], component: PageMeComponent },
-  {path: 'form', canActivate: [RequireAuthGuard], component: PageFormComponent},
-  {path: 'list-all', component: PageListAllComponent}
+  {path: 'form', canActivate: [RequireAdminGuard], component: PageFormComponent},
+  {path: 'list-all', canActivate: [RequireAdminGuard], component: PageListAllComponent}
 ];
 
 @NgModule({

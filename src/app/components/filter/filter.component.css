@@ -17,6 +17,10 @@
   padding: 0;
 }
 
+p {
+  font-size: 2rem;
+}
+
 @media (max-width: 600px) {
   .tab {
     width: 100%;
