@@ -1,14 +1,14 @@
 
   <div class="selected-filters-container">
-    <span class="selected-filters" *ngFor='let categories of filter.categories'>{{categories}}</span>
-    <span class="selected-filters" *ngFor='let district of filter.district'>{{district}}</span>
-    <span class="selected-filters" *ngFor='let situation of filter.situation'>{{situation}}</span>
-    <span class="selected-filters" *ngFor='let price of filter.price'>{{price}}</span>
-    <span class="selected-filters" *ngFor='let vibe of filter.vibe'>{{vibe}}</span>
-    <span class="selected-filters" *ngFor='let tags of filter.tags'>{{tags}}</span>
+    <span class="selected-filters" *ngFor='let categories of filter.categories'>🍽 {{categories}}</span>
+    <span class="selected-filters" *ngFor='let district of filter.district'>🗺 {{district}}</span>
+    <span class="selected-filters" *ngFor='let situation of filter.situation'>👫 {{situation}}</span>
+    <span class="selected-filters" *ngFor='let price of filter.price'>💸 {{price}}</span>
+    <span class="selected-filters" *ngFor='let vibe of filter.vibe'>💃🏻 {{vibe}}</span>
+    <span class="selected-filters" *ngFor='let tags of filter.tags'>⭐ {{tags}}</span>
   </div>
   <div class="filter-container">
-      <button (click)='clearFilter()'>Clear Filter</button>
+      <button (click)='clearFilter()'>Clear all 🙅‍</button>
     </div>
 
   <form (ngSubmit)="findResult()" #myForm="ngForm"  novalidate>

@@ -18,8 +18,9 @@ button {
   background-color: #f35742;
   border: none;
   margin: 1px;
-  padding: 3% 15%;
+  padding: 3% 7%;
   text-transform: uppercase;
+  font-size: 1rem;
 }
 
 .result-button-container {
