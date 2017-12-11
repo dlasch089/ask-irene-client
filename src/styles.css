@@ -15,10 +15,9 @@ html {
 
 body {
   background-color: #f9eee4;
+  height: 100%;
 }
-/* div {
-  border: 1px solid #104300;
-} */
+
 
 h1, h2 {
   font-family: 'Abril Fatface', cursive;
