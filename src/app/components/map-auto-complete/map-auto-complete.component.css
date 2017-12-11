@@ -4,4 +4,6 @@ agm-map {
 
 input {
   width: 50%;
+  margin: 1%;
+  border-radius: 4px;
 }

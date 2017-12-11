@@ -1,4 +1,4 @@
-<form [ngClass]="{'has-error': error}" novalidate>
+<form [ngClass]="{'has-error': error}" novalidate class="login-form-container">
   <div class="form-group field" [ngClass]="{'has-error': error}">
     <label>Username</label>
     <input type="text" [(ngModel)]="user.username" name="username" required/>

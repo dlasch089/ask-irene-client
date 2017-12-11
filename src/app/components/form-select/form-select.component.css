@@ -6,3 +6,11 @@ ul {
 li {
   list-style: none;
 }
+
+button {
+  font-family: 'Poppins', sans-serif;
+  color: #fdcfd2;
+  background-color: #f35742;
+  border: none;
+  margin: 1px;
+}

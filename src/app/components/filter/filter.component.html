@@ -1,12 +1,17 @@
 
-  <button (click)='clearFilter()'>Clear you filter</button>
-  <span *ngFor='let categories of filter.categories'>{{categories}}</span>
-  <span *ngFor='let district of filter.district'>{{district}}</span>
-  <span *ngFor='let situation of filter.situation'>{{situation}}</span>
-  <span *ngFor='let price of filter.price'>{{price}}</span>
-  <span *ngFor='let vibe of filter.vibe'>{{vibe}}</span>
-  <span *ngFor='let tags of filter.tags'>{{tags}}</span>
-<form (ngSubmit)="findResult()" #myForm="ngForm"  novalidate>
+  <div class="selected-filters-container">
+    <span class="selected-filters" *ngFor='let categories of filter.categories'>{{categories}}</span>
+    <span class="selected-filters" *ngFor='let district of filter.district'>{{district}}</span>
+    <span class="selected-filters" *ngFor='let situation of filter.situation'>{{situation}}</span>
+    <span class="selected-filters" *ngFor='let price of filter.price'>{{price}}</span>
+    <span class="selected-filters" *ngFor='let vibe of filter.vibe'>{{vibe}}</span>
+    <span class="selected-filters" *ngFor='let tags of filter.tags'>{{tags}}</span>
+  </div>
+  <div class="filter-container">
+      <button (click)='clearFilter()'>Clear Filter</button>
+    </div>
+
+  <form (ngSubmit)="findResult()" #myForm="ngForm"  novalidate>
   <div class="container">
     <mat-tab-group class='tab'>
       <mat-tab label="What">

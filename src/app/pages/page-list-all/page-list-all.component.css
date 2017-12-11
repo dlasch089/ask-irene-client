@@ -2,3 +2,11 @@ span {
   margin: 2px;
   color: rgb(57, 196, 3);
 }
+
+button {
+  font-family: 'Poppins', sans-serif;
+  color: #fdcfd2;
+  background-color: #f35742;
+  border: none;
+  margin: 1px;
+}
