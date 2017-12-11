@@ -16,6 +16,7 @@ li {
   border-radius: 8px;
   vertical-align: middle;
   margin-top: -1px;
+  margin: -3px 10px 0;
 } 
 
 .regular-checkbox:active, .regular-checkbox:checked:active {
@@ -36,6 +37,8 @@ li {
 	left: 3px;
 	/* color: #99a1a7; */
 }
+
+
 
 
 

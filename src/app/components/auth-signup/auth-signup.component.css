@@ -1,0 +1,36 @@
+.signup-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 50px 0;
+}
+
+input {
+  font-family: 'Poppins';
+  width: 80%;
+  height: 50px;
+  border-radius: 8px;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  color: #3b5892;
+}
+
+.field {
+  width:100%;
+}
+
+.actions {
+  width: 100%;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+  color: #fdcfd2;
+  background-color: #f35742;
+  border: none;
+  margin: 1px;
+  padding: 3% 15%;
+}

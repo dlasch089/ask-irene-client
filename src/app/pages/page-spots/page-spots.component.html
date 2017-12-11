@@ -1,5 +1,9 @@
-<div class="result-button" *ngIf='spots'>
-  <button (click)="showResults($event)" (click)="filterVisible = !filterVisible" >Show results: </button><span [ngClass]="filterVisible ? 'filter-visible' : 'filter-hidden'">{{spots.length}}</span>
+
+<!-- <a [routerLink]="['/spots/spot/:spotId']" (click)="getRandomSpot()">List All</a> -->
+
+<div class="result-button-container" *ngIf='spots'>
+  <button (click)="showResults($event)" (click)="filterVisible = !filterVisible" >The perfect spot</button>
+  <span >{{spots.length}}</span>
 </div>
 <div class="results" *ngIf="resultVisible">
   <mat-tab-group>
