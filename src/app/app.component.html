@@ -1,25 +1,69 @@
 <header class="site-header">
-  
-    <h1>
-      {{ title }}! 
-    </h1>
-  
-    <div [ngClass]="{'is-user': user, 'is-anon': anon}">
-      <a [routerLink]="['/spots']">Spots</a>
-      <!-- <div *ngIf="loading">
-        <span class="username text">loading...</span>
+  <div class="navbar">
+    <div class="logo">  
+      <a [routerLink]="['/']">
+        <p>
+          {{ title }} 
+        </p>
+      </a> 
+    </div>
+
+    <div>
+      <!-- <button mat-icon-button [matMenuTriggerFor]="menu"> -->
+        <img [matMenuTriggerFor]="menu" mat-icon-button src='../assets/images/menu.png' alt="">
+          <!-- <i   class="material-icons" 
+          src="/"></i>         -->
+          <!-- <mat-icon>more_vert</mat-icon> -->
+      <!-- </button> -->
+      <mat-menu #menu="matMenu">
+        <div *ngIf="!loading && !!user">
+          <button mat-menu-item>
+            <a (click)="profile()">Hello {{user.username}}</a>
+          </button>       
+          <button mat-menu-item>  
+            <a (click)="logout()">Logout</a>
+          </button>          
+        </div>
+        <button mat-menu-item>
+            <a [routerLink]="['/spots']">Spots</a>              
+        </button>
+        <div *ngIf="!loading && anon">
+          <button mat-menu-item>
+            <a (click)="login()">Login</a>
+          </button>       
+          <button mat-menu-item>              
+            <a (click)="signup()">Sign Up</a>
+          </button>
+        </div>
+        <div *ngIf="!loading && admin">
+        <button mat-menu-item>
+          <a (click)="goToForm()">Add a new spot</a>
+        </button>
+        <button mat-menu-item>
+          <a (click)="goToList()">List all spots</a>
+        </button>
+        </div>
+      </mat-menu>
+    </div>
+    
+      <!-- <div class='nav-menu' [ngClass]="{'is-user': user, 'is-anon': anon, 'is-admin': admin}">
+        <div *ngIf="loading">
+          <span class="username text">loading...</span>
+        </div>
+       
+        
+        
       </div> -->
-      <div *ngIf="!loading && !!user">
-        <a (click)="profile()">{{user.username}}</a>
-        <a (click)="logout()">logout</a>
-      </div>
-      <div *ngIf="!loading && anon">
-        <a (click)="login()">login</a>
-        <a (click)="signup()">signup</a>
-      </div>
-    </div>  <hr/>
-  </header>
+  </div>  
+  <hr/>
+</header>
 
 <router-outlet></router-outlet>
+
+<footer>
+  <p class='footer-text'>
+    Built in Barcelona with 🍻
+  </p>
+</footer>
 
 

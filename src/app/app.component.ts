@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
 
   loading = true;
   anon: boolean;
+  admin: true;
   user: User;
 
   constructor(
@@ -33,6 +34,10 @@ export class AppComponent implements OnInit {
       this.loading = false;
       this.user = user;
       this.anon = !user;
+      // if (this.user.role.includes('Admin')) {
+      //   this.admin = true;
+      // }
+      this.admin = true;
     });
   }
 
@@ -51,5 +56,13 @@ export class AppComponent implements OnInit {
   logout() {
     this.authService.logout()
       .subscribe(() => this.router.navigate(['/auth/login']));
+  }
+
+  goToForm() {
+    this.router.navigate(['/form']);
+  }
+
+  goToList() {
+    this.router.navigate(['/list-all']);
   }
 }

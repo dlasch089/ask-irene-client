@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { MatTab, MatTabsModule } from '@angular/material';
 import { MatTabGroup } from '@angular/material';
+import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -83,6 +84,7 @@ const routes: Routes = [
     HttpClientModule,
     HttpModule,
     MatTabsModule,
+    MatMenuModule,
     BrowserAnimationsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCw7VtAVg6y_TSdQcFVB_dbcnnS15Vp4u0',
