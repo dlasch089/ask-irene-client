@@ -1,7 +1,7 @@
 // names/keys taken from google spreadsheet
 
 export class Spot {
-  id: string;
+  _id: string;
   name: string;
   district: Array<string> = [];
   categories: Array<string> = [];

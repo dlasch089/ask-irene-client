@@ -29,6 +29,7 @@ import { PageListAllComponent } from './pages/page-list-all/page-list-all.compon
 import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { PageSignupComponent } from './pages/page-signup/page-signup.component';
 import { PageMeComponent } from './pages/page-me/page-me.component';
+import { PageSpotDetailComponent } from './pages/page-spot-detail/page-spot-detail.component';
 import { PageHomeComponent } from './pages/page-home/page-home.component';
 
 // Components
@@ -41,12 +42,12 @@ import { FilterSelectComponent } from './components/filter-select/filter-select.
 import { SpotListComponent } from './components/spot-list/spot-list.component';
 import { SpotDetailComponent } from './components/spot-detail/spot-detail.component';
 import { MapSpotsComponent } from './components/map-spots/map-spots.component';
-import { PageSpotDetailComponent } from './pages/page-spot-detail/page-spot-detail.component';
 
 // Routes
 const routes: Routes = [
   {path: '', component: PageHomeComponent},
   {path: 'spots', component: PageSpotsComponent},
+  {path: 'spots/:spotId', component: PageSpotDetailComponent},
   { path: 'auth/login', canActivate: [RequireAnonGuard], component: PageLoginComponent },
   { path: 'auth/signup', canActivate: [RequireAnonGuard], component: PageSignupComponent },
   { path: 'auth/me', canActivate: [RequireAuthGuard], component: PageMeComponent },

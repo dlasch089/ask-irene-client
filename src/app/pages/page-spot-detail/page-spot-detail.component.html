@@ -1,3 +1,45 @@
-<p>
-  page-spot-detail works!
-</p>
+
+<div class="spot-detail" *ngIf="spot">
+  <div class="headline-bubble">
+    <h1>{{spot.name}}</h1>
+  </div>
+  <div class="triangle-headline"></div>
+  
+  <div class="images-container">
+    <img src="https://instagram.com/p/{{spot.images[0]}}/media/?size=t" alt="spot.name"  *ngIf="spot.images[0]">
+    <img src="https://instagram.com/p/{{spot.images[1]}}/media/?size=t" alt="spot.name"  *ngIf="spot.images[1]">
+    <img src="https://instagram.com/p/{{spot.images[2]}}/media/?size=t" alt="spot.name"  *ngIf="spot.images[2]">
+  </div>
+  
+  
+  <div class="description-bubble">
+    <p>{{spot.description}}</p>
+  </div>
+  <div class="triangle-description"></div>
+
+<div class="spot-specitications" *ngIf="spot.tags ">
+  <span>{{spot.price[0]}}</span>
+  <span>{{spot.district[0]}}</span>
+  <span *ngFor="let spec of spot.tags">{{spec}}</span>
+  <span *ngFor="let spec of spot.vibe">{{spec}}</span>
+  <span *ngFor="let spec of spot.situation">{{spec}}</span>
+  <span *ngFor="let spec of spot.categories">{{spec}}</span>
+</div>
+
+
+<div class="take-me-there-container">
+  <a target="_blank" class="take-me-there-btn" [href]="spot.links.googleMaps">Take me there</a>
+</div>
+
+<div class="add-buttons-container">
+    <button class="add-btn" (click)="onFavAdd()">add to favs</button>
+    <button class="add-btn" (click)="onSaveAdd()">Add to WishList</button>
+</div>
+
+<div class="back-button-container">
+    <a class="back-btn" [routerLink]="['/spots']">Back</a>
+  </div>
+
+
+</div>
+
