@@ -6,9 +6,9 @@
   
     <div [ngClass]="{'is-user': user, 'is-anon': anon}">
       <a [routerLink]="['/spots']">Spots</a>
-      <!-- <div *ngIf="loading">
+      <div *ngIf="loading">
         <span class="username text">loading...</span>
-      </div> -->
+      </div>
       <div *ngIf="!loading && !!user">
         <a (click)="profile()">{{user.username}}</a>
         <a (click)="logout()">logout</a>
