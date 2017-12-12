@@ -2,8 +2,8 @@
 <div *ngIf="!items">Loading..</div>
 
 <ul>
-  <li *ngFor="let item of flags; let ix = index" class="filter-item">
-    <label for="item.name" (click)="handleChange(item.name, ix)">
+  <li *ngFor="let item of allFlags[filterType]; let ix = index" class="filter-item">
+    <label for="item.name" (click)="handleChange(item.name, ix, filterType)">
       <input  type="checkbox" [value]="item.name" [name]="item.name" [checked]="item.checked" class="regular-checkbox">{{item.name}}
     </label>  
   </li>

@@ -21,6 +21,7 @@ import { RequireAdminGuard } from './guards/require-admin.guard';
 // Services
 import { SpotService } from './services/spot.service';
 import { SelectorService } from './services/selector.service';
+import { FilterService } from './services/filter.service';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
 
@@ -103,7 +104,8 @@ const routes: Routes = [
     RequireAuthGuard,
     RequireAnonGuard,
     RequireAdminGuard,
-    UserService
+    UserService,
+    FilterService
   ],
   bootstrap: [AppComponent]
 })

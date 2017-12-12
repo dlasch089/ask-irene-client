@@ -8,6 +8,7 @@ import { AuthService } from '../../services/auth.service';
 
 import { SpotService } from '../../services/spot.service';
 import { SelectorService } from '../../services/selector.service';
+import { FilterService } from '../../services/filter.service';
 
 @Component({
   selector: 'app-page-spots',
@@ -25,22 +26,22 @@ export class PageSpotsComponent implements OnInit {
   filterVisible = true;
 
   constructor(
-    private spotService: SpotService, 
+    private spotService: SpotService,
     private selectorService: SelectorService,
+    private filterService: FilterService,
     private authService: AuthService
   ) { }
 
   ngOnInit() {
 
+    this.spotService.filterSpots(this.filterService.filter)
+      .subscribe((data) => this.spots = data);
 
-  this.spotService.getAllSpots()
-    .subscribe((data) => this.spots = data);
-
-  this.selectorService.load()
-    .then((data) => {
-      this.filterReady = true;
-      this.selectors = data;
-    });
+    this.selectorService.load()
+      .then((data) => {
+        this.filterReady = true;
+        this.selectors = data;
+      });
   }
 
   handleFilterChange(result) {

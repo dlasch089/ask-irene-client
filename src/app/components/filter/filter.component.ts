@@ -10,6 +10,7 @@ import { Flag } from '../../models/flags';
 
 import { SpotService } from '../../services/spot.service';
 import { SelectorService } from '../../services/selector.service';
+import { FilterService } from '../../services/filter.service';
 
 @Component({
   selector: 'app-filter',
@@ -20,32 +21,42 @@ export class FilterComponent implements OnInit {
 
 
   filter: Filter;
-  flags: Array<Flag> = [];
+  // allFlags: Object;
 
   feedbackEnabled = false;
   processing = false;
+
+  filterType = ['categories', 'district', 'situation', 'price', 'vibe', 'tags'];
 
   @Input() spots: Object;
   @Input() selectors = null;
 
   @Output() onChange = new EventEmitter<Object>();
 
-  constructor(private spotService: SpotService, private selectorService: SelectorService, private router: Router ) { }
+  constructor(
+    private spotService: SpotService,
+    private selectorService: SelectorService,
+    private router: Router,
+    private filterService: FilterService
+  ) { }
 
   ngOnInit() {
-    this.filter = new Filter();
+    this.filter = this.filterService.filter;
+    // this.flags = this.filterService.flags;
   }
 
-  // should emit
   handleFilterChange(key, value) {
     this.filter[key] = value; // needs to be in the brackets, because it is a string
-        this.findResult();
+    this.filterService.filter = this.filter;
+    this.findResult();
   }
 
-  handleCheckChange(checkItemStatus) {
-    this.flags.push(checkItemStatus);
-    console.log(this.flags);
-  }
+  // (onCheck)="handleCheckChange($event)" --> From the HTML - on all filter-select components
+  // handleCheckChange(checkItemStatus) {
+  //   this.flags.push(checkItemStatus);
+  //   this.filterService.flags = this.flags;
+  //   console.log(this.flags);
+  // }
 
   // should emit
   findResult() {
@@ -56,17 +67,19 @@ export class FilterComponent implements OnInit {
     });
   }
 
-  clearFilter() {
-    this.filter = new Filter();
-    for (let ix = 0; ix < this.flags.length; ix++) {
-      this.flags[ix].checked = false;
-    }
-    this.flags = [];
-    console.log(this.flags);
-    this.spotService.getAllSpots()
-      .subscribe((data) => {
-        this.spots = data;
-        this.onChange.emit(this.spots);
-      });
-  }
+  // clearFilter() {
+  //   this.allFlags = this.filterService.addCheckedValue();
+  //   // this.filter = this.filterService.newFilter();
+  //   // for (let ix = 0; ix < this.flags.length; ix++) {
+  //   //   this.flags[ix].checked = false;
+  //   // }
+  //   // this.flags = [];
+  //   // this.filterService.flags = this.flags;
+  //   // console.log(this.flags);
+  //   // this.spotService.getAllSpots()
+  //   //   .subscribe((data) => {
+  //   //     this.spots = data;
+  //   //     this.onChange.emit(this.spots);
+  //   //   });
+  // }
 }

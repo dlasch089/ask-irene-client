@@ -3,9 +3,7 @@
 ng g s services/spot
 ng g s services/selector
 ng g s services/auth
-ng g s services/filter
-
-
+ng g service services/filter
 
 ng g c pages/page-user
 ng g c pages/page-spot
