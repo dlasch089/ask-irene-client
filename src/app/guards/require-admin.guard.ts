@@ -17,8 +17,9 @@ export class RequireAdminGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
       return this.authService.me().then((user) => {
-        const role = user.role;
-        if (role.includes('Admin')) {
+        if (!user) {
+          this.router.navigate(['/']);
+        } else if (user.role.includes('Admin')) {
           return true;
         } else {
           this.router.navigate(['/spots']);
