@@ -15,6 +15,7 @@ export class PageProfileComponent implements OnInit {
 
   user: User;
   favorites: Array<Spot>;
+  wishList: Array<Spot>;
 
   constructor(
     private userService: UserService,
@@ -29,8 +30,8 @@ export class PageProfileComponent implements OnInit {
       this.user = user;
       this.userService.getUserSpots(this.user)
         .subscribe((data) => {
-          this.favorites = data;
-          console.log(this.favorites);
+          this.favorites = data.favorites;
+          this.wishList = data.wishList;
         });
     });
   }
