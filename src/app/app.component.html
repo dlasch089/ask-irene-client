@@ -13,7 +13,7 @@
       <mat-menu #menu="matMenu">
         <div *ngIf="!loading && !!user">
           <button mat-menu-item>
-            <a (click)="profile()">Hello {{user.username}}</a>
+            <a (click)="profile()">Hello <span>{{user.username}}</span></a>
           </button>       
           <button mat-menu-item>  
             <a (click)="logout()">Logout</a>
