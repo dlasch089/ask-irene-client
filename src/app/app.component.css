@@ -36,6 +36,11 @@ img {
   width: 2rem;
 }
 
+span {
+  font-family: 'Abril Fatface', cursive;
+  color: #365897;
+}
+
 .navbar {
   position: sticky;
   width: 100%;

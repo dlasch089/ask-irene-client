@@ -1,0 +1,23 @@
+
+    <div *ngIf="user" class="ask-irene">
+        <h3>{{user.username}}</h3>
+        <p>{{user.email}}</p>
+      </div>
+      <div class="triangle-one pink">
+    </div>
+
+<mat-tab-group mat-stretch-tabs="yes" >
+    <mat-tab label="Favorites">
+        <ng-template mat-tab-label>
+            <p>💘</p>
+        </ng-template>
+        <app-spot-list [spots]="favorites" class="favorite-list"></app-spot-list>
+    </mat-tab>
+    
+    <mat-tab  label="Wishlist" >
+        <ng-template mat-tab-label>
+            <p>📌</p>
+        </ng-template>
+      <app-spot-list [spots]="wishList" class="wish-list"></app-spot-list>
+    </mat-tab>
+  </mat-tab-group>

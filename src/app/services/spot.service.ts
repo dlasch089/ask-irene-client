@@ -48,7 +48,7 @@ export class SpotService {
     return this.http.post(apiUrl + '/filter', newFilter);
   }
 
-  getRandom() {
+  getRandomSpot() {
     return this.http.get(apiUrl + '/random');
   }
 }

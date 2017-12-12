@@ -44,6 +44,7 @@ import { FilterSelectComponent } from './components/filter-select/filter-select.
 import { SpotListComponent } from './components/spot-list/spot-list.component';
 import { SpotDetailComponent } from './components/spot-detail/spot-detail.component';
 import { MapSpotsComponent } from './components/map-spots/map-spots.component';
+import { PageProfileComponent } from './pages/page-profile/page-profile.component';
 
 // Routes
 const routes: Routes = [
@@ -54,7 +55,8 @@ const routes: Routes = [
   { path: 'auth/signup', canActivate: [RequireAnonGuard], component: PageSignupComponent },
   { path: 'auth/me', canActivate: [RequireAuthGuard], component: PageMeComponent },
   {path: 'form', canActivate: [RequireAdminGuard], component: PageFormComponent},
-  {path: 'list-all', canActivate: [RequireAdminGuard], component: PageListAllComponent}
+  {path: 'list-all', canActivate: [RequireAdminGuard], component: PageListAllComponent},
+  { path: 'user/me', canActivate: [RequireAuthGuard], component: PageProfileComponent }
 ];
 
 @NgModule({
@@ -77,6 +79,7 @@ const routes: Routes = [
     SpotDetailComponent,
     MapSpotsComponent,
     PageSpotDetailComponent,
+    PageProfileComponent,
   ],
   imports: [
     BrowserModule,

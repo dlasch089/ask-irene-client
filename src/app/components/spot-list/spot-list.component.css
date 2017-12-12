@@ -24,3 +24,7 @@ img {
 h2 {
   margin-bottom: 0px;
 }
+
+.no-spot {
+  min-height: 60vh;
+}

@@ -6,7 +6,7 @@
   <span >{{spots.length}}</span>
 </div>
 <div class="results" *ngIf="resultVisible">
-  <mat-tab-group>
+  <mat-tab-group mat-stretch-tabs="yes">
     <mat-tab label="Map"  (click)="activateMap()">
         <app-map-spots [spots]="spots" ></app-map-spots>
     </mat-tab>
