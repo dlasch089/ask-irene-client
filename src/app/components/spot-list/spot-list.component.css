@@ -18,7 +18,9 @@
 }
 
 img {
-  width: 75%;
+  max-width: 80%;
+  border-radius: 8px;
+  margin: 4%;
 }
 
 h2 {
