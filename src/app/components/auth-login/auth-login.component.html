@@ -1,14 +1,17 @@
-<form [ngClass]="{'has-error': error}" novalidate class="login-form-container">
-  <div class="form-group field" [ngClass]="{'has-error': error}">
-    <label>Username</label>
-    <input type="text" [(ngModel)]="user.username" name="username" required/>
-  </div>
-  <div class="form-group field" [ngClass]="{'has-error': error}">
-    <label>Password</label>
-    <input type="password" [(ngModel)]="user.password" name="password" required/>
-  </div>
-  <div class="form-group actions">
-    <button (click)="login()">login</button>
-    <p *ngIf="error" class="error">{{error}}</p>
-  </div>
-</form> 
+<div class="container">
+  <form [ngClass]="{'has-error': error}" novalidate class="login-form-container">
+    <div class="form-group field" [ngClass]="{'has-error': error}">
+      <label>Username</label>
+      <input type="text" [(ngModel)]="user.username" name="username" required/>
+    </div>
+    <div class="form-group field" [ngClass]="{'has-error': error}">
+      <label>Password</label>
+      <input type="password" [(ngModel)]="user.password" name="password" required/>
+    </div>
+    <div class="form-group actions">
+      <button (click)="login()">login</button>
+      <p *ngIf="error" class="error">Incorrect username and/or password</p>
+      <p>Don't have an account? Create one <a [routerLink]="['/auth/signup']">here!</a></p>    
+    </div>
+  </form> 
+</div>

@@ -1,10 +1,30 @@
+/* header,
+footer {
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+} */
+
+router-outlet {
+  flex-shrink: 1;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 body {
   width: 100%;
   height: 100%;
 }
 
-header {
-  max-height: 12%;
+
+footer {
+  max-height: 8%;
+  position: sticky;
 }
 
 a {
@@ -24,10 +44,10 @@ img {
 }
 
 .logo {
-  max-width: 20%;
+  max-width: 50px;
 }
 
-.logo, p {
+.logo p {
   color: #f35742;
   font-size: 1.4rem;
   text-transform: uppercase;

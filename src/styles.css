@@ -29,8 +29,15 @@ label, p, a, span {
   color: #f35742;
 }
 
+button {
+  outline: none;
+}
 
 /* -- forms --- error handlers -- */
+
+form {
+  margin-bottom: 18%;
+}
 
 form .is-processing {
   opacity: 0.5;

@@ -18,7 +18,6 @@ import { SelectorService } from '../../services/selector.service';
 })
 export class FilterComponent implements OnInit {
 
-
   filter: Filter;
   flags: Array<Flag> = [];
 

@@ -2,8 +2,7 @@ body {
   height: 100%;
 }
 .main-container {
-  margin: 3rem 0;
-  height: fit-content;
+  margin-bottom: 18%;
 }
 
 .top {
@@ -28,14 +27,14 @@ body {
 }
 
 .triangle-one {
-  width: 2rem;
-  height: 2rem;
+    /* width: 10px; */
+  /* height: 10px; */
   background-color: inherit;
   margin-top: -0.1px;
-  margin-right: 1.8rem;
-  border-left: 1rem solid transparent;
-	border-right: 1rem solid transparent;
-	border-top: 2rem solid #fdcfd2;
+  margin-right: 30px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 30px solid #fdcfd2;
 }
 
 .body {
@@ -43,20 +42,20 @@ body {
 }
 
 .bubble {
-  width: 75%;
-  border-radius: 0.4rem;
+  max-width: 75%;
+  border-radius: 5px;
   background-color: #f35742;
   padding: 1rem 0;
-  margin-top: 1rem;
+  margin: 30px 0;
 }
 
 .bubble > a {
   color: #f9eee4;
   text-transform: uppercase;
   text-decoration: none;
-  margin: 2rem 1.5rem;
   font-weight: normal;
   font-size: 1.3rem;
+  margin-left: 15px;
 }
 
 .triangle-two {

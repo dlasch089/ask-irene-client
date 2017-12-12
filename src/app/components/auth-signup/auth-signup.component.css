@@ -1,3 +1,7 @@
+.container {
+  margin-bottom: 18%;
+}
+
 .signup-form-container {
   display: flex;
   flex-direction: column;
@@ -34,4 +38,10 @@ button {
   border: none;
   margin: 1px;
   padding: 3% 15%;
+}
+
+p {
+  width: 70%;
+  text-align: center;
+  margin: 8% auto 0;
 }

@@ -1,63 +1,66 @@
-<header class="site-header">
-  <div class="navbar">
-    <div class="logo">  
-      <a [routerLink]="['/']">
-        <p>
-          {{ title }} 
-        </p>
-      </a> 
-    </div>
+<div class="container">
+  <header class="site-header">
+    <div class="navbar">
+      <div class="logo">  
+        <a [routerLink]="['/']">
+          <p>
+            {{ title }} 
+          </p>
+        </a> 
+      </div>
 
-    <div [ngClass]="{'is-user': user, 'is-anon': anon, 'is-admin': admin}">
-      <img [matMenuTriggerFor]="menu" mat-icon-button src='../assets/images/menu.png' alt="">
-      <mat-menu #menu="matMenu">
-        <div *ngIf="!loading && !!user">
+      <div [ngClass]="{'is-user': user, 'is-anon': anon, 'is-admin': admin}">
+        <img [matMenuTriggerFor]="menu" mat-icon-button src='../assets/images/menu.png' alt="">
+        <mat-menu #menu="matMenu">
+          <div *ngIf="!loading && !!user">
+            <button mat-menu-item>
+              <a (click)="profile()">Hello {{user.username}}</a>
+            </button>       
+            <button mat-menu-item>  
+              <a (click)="logout()">Logout</a>
+            </button>          
+          </div>
           <button mat-menu-item>
-            <a (click)="profile()">Hello {{user.username}}</a>
-          </button>       
-          <button mat-menu-item>  
-            <a (click)="logout()">Logout</a>
-          </button>          
-        </div>
-        <button mat-menu-item>
-            <a [routerLink]="['/spots']">Spots</a>              
-        </button>
-        <div *ngIf="!loading && anon">
-          <button mat-menu-item>
-            <a (click)="login()">Login</a>
-          </button>       
-          <button mat-menu-item>              
-            <a (click)="signup()">Sign Up</a>
+              <a [routerLink]="['/spots']">Spots</a>              
           </button>
-        </div>
-        <div *ngIf="!loading && admin">
-        <button mat-menu-item>
-          <a (click)="goToForm()">Add a new spot</a>
-        </button>
-        <button mat-menu-item>
-          <a (click)="goToList()">List all spots</a>
-        </button>
-        </div>
-      </mat-menu>
-    </div>
-    
-      <!-- <div class='nav-menu' [ngClass]="{'is-user': user, 'is-anon': anon, 'is-admin': admin}">
-        <div *ngIf="loading">
-          <span class="username text">loading...</span>
-        </div>
-       
+          <div *ngIf="!loading && anon">
+            <button mat-menu-item>
+              <a (click)="login()">Login</a>
+            </button>       
+            <button mat-menu-item>              
+              <a (click)="signup()">Sign Up</a>
+            </button>
+          </div>
+          <div *ngIf="!loading && admin">
+          <button mat-menu-item>
+            <a (click)="goToForm()">Add a new spot</a>
+          </button>
+          <button mat-menu-item>
+            <a (click)="goToList()">List all spots</a>
+          </button>
+          </div>
+        </mat-menu>
+      </div>
+      
+        <!-- <div class='nav-menu' [ngClass]="{'is-user': user, 'is-anon': anon, 'is-admin': admin}">
+          <div *ngIf="loading">
+            <span class="username text">loading...</span>
+          </div>
         
-        
-      </div> -->
-  </div>  
-</header>
+          
+          
+        </div> -->
+    </div>  
+  </header>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 
-<footer>
-  <p class='footer-text'>
-    Built in Barcelona with 🍻
-  </p>
-</footer>
+
+  <footer>
+    <p class='footer-text'>
+      Built in Barcelona with 🍻
+    </p>
+  </footer>
+</div>
 
 
