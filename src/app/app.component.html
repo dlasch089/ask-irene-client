@@ -12,30 +12,30 @@
       <img [matMenuTriggerFor]="menu" mat-icon-button src='../assets/images/menu.png' alt="">
       <mat-menu #menu="matMenu">
         <div *ngIf="!loading && !!user">
-          <button mat-menu-item>
-            <a (click)="profile()">Hello <span>{{user.username}}</span></a>
+          <button mat-menu-item  (click)="profile()">
+            <a>Hello <span>{{user.username}}</span></a>
           </button>       
-          <button mat-menu-item>  
-            <a (click)="logout()">Logout</a>
+          <button mat-menu-item (click)="logout()">  
+            <a >Logout</a>
           </button>          
         </div>
-        <button mat-menu-item>
-            <a [routerLink]="['/spots']">Spots</a>              
+        <button mat-menu-item [routerLink]="['/spots']">
+            <a >Spots</a>              
         </button>
         <div *ngIf="!loading && anon">
-          <button mat-menu-item>
-            <a (click)="login()">Login</a>
+          <button mat-menu-item (click)="login()">
+            <a >Login</a>
           </button>       
-          <button mat-menu-item>              
-            <a (click)="signup()">Sign Up</a>
+          <button mat-menu-item (click)="signup()">              
+            <a >Sign Up</a>
           </button>
         </div>
         <div *ngIf="!loading && admin">
-        <button mat-menu-item>
-          <a (click)="goToForm()">Add a new spot</a>
+        <button mat-menu-item (click)="goToForm()">
+          <a >Add a new spot</a>
         </button>
-        <button mat-menu-item>
-          <a (click)="goToList()">List all spots</a>
+        <button mat-menu-item (click)="goToList()">
+          <a >List all spots</a>
         </button>
         </div>
       </mat-menu>
