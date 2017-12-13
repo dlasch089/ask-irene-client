@@ -31,7 +31,7 @@ export class SpotService {
     const requestOptions = {
       withCredentials: true
     };
-    console.log(newSpot);
+    // console.log(newSpot);
     return this.http.post(apiUrl + '/', newSpot, requestOptions);
   }
 
@@ -40,7 +40,7 @@ export class SpotService {
       withCredentials: true,
       spotId: spotId
     };
-    console.log(spotId);
+    // console.log(spotId);
     return this.http.post(apiUrl + `/${spotId}`, requestOptions);
   }
 
