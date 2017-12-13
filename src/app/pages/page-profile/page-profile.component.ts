@@ -15,8 +15,8 @@ export class PageProfileComponent implements OnInit {
 
 
   user: User;
-  favorites = null; 
-  wishList = null;
+  favorites: Array<Spot> = null;
+  wishList: Array<Spot> = null;
 
   constructor(
     private userService: UserService,
