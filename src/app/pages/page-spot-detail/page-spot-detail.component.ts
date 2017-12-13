@@ -43,14 +43,14 @@ export class PageSpotDetailComponent implements OnInit {
     });
   }
 
-  onFavAdd() {
+  onFavEdit() {
     this.userService.updateFavs(this.spot._id, this.user)
       .subscribe((message) => {
         console.log(message);
       });
   }
 
-  onSaveAdd() {
+  onSaveEdit() {
     this.userService.updateWishList(this.spot._id, this.user)
     .subscribe((message) => {
       console.log(message);

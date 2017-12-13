@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Router, ActivatedRoute } from '@angular/router';
 import { Spot } from '../../models/spot';
@@ -11,10 +11,16 @@ import { Spot } from '../../models/spot';
 export class SpotListComponent implements OnInit {
 
   @Input() spots: Array<Spot>;
+  @Input() hideButton: Boolean = false;
+  @Output() onDelete = new EventEmitter<String>();
 
   constructor(router: Router, route: ActivatedRoute,) { }
 
   ngOnInit() {
+  }
+
+  handleDelete(spotId) {
+    this.onDelete.emit(spotId);
   }
 
 }
