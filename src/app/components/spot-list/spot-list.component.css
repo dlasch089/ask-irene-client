@@ -1,5 +1,19 @@
-.spot-item {
-  display: -webkit-box;
+.spot-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.spot-info {
+  width: 75%;
+  padding: 0 1rem;
+  background-color: #fdcfd2;
+  border-radius: 8px;
+  width: 95%;
+  margin: 5% 0 2% 0;
+  
+  /* display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
@@ -9,12 +23,22 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 95%;
   box-shadow: 4px 4px 5px lightgrey;
   border: 1px solid lightgrey;
   border-radius: 5px;
-  margin: 5% 0 2%;
-  padding: 1%;
+  padding: 1%; */
+}
+
+.triangle-one {
+  height: 30px;
+  width: 30px;
+  background-color: #fdcfd2;
+  margin-top: -10px;
+  margin-left: 30px;
+  border-left: 15px solid #f9eee4;
+  border-right: 15px solid #f9eee4;
+  border-top: 30px solid #fdcfd2;
+
 }
 
 img {

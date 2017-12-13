@@ -24,6 +24,10 @@ h1, h2, h3 {
   color: #365897;
 }
 
+a {
+  outline: none;
+}
+
 label, p, a, span {
   font-family: 'Poppins', sans-serif;
   color: #f35742;
@@ -49,7 +53,7 @@ app-page-home {
 /* -- forms --- error handlers -- */
 
 form {
-  margin-bottom: 18%;
+  /* margin-bottom: 18%; */
 }
 
 form .is-processing {
@@ -81,4 +85,68 @@ form .field.has-error input {
 
 form .is-selected {
   display: none;
+}
+
+
+/* FOR LARGER SCREENS */
+/* IPAD */
+@media (min-width: 750px) and (max-width: 1024px) {
+  /* general adjustments */
+  app-page-spots,
+  app-page-profile,
+  app-page-login,
+  app-page-signup,
+  app-page-spot-detail,
+  app-page-home {
+    min-height: 80vh;
+    width: 80vw;
+    margin: 5% auto;
+  }
+
+  /* fixing the tabs */
+  mat-tab-group.mat-tab-group.tab.mat-primary {
+    width: 80vw !important;
+  }
+
+  mat-tab-header.mat-tab-header {
+    width: 80vw;
+  }
+
+  .mat-tab-labels .mat-tab-label.mat-ripple {
+    width: 15%;
+    height: 50px;
+  }
+
+  /* fixing smaller problems */
+  div.ask-irene {
+    width: 40% !important;
+  }
+
+  .result-button-container {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .result-button-container button {
+    font-size: 1.5rem;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  app-page-spots,
+  app-page-profile,
+  app-page-login,
+  app-page-signup,
+  app-page-spot-detail,
+  app-page-home {
+    min-height: 80vh;
+    width: 80vw;
+    margin: 5% auto;
+  }
+
+  .container {
+    width: 80vw;
+    margin: 2% auto 0;
+  }
 }

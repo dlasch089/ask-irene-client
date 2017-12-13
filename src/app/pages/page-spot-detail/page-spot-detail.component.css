@@ -1,7 +1,7 @@
 .headline-bubble {
   text-align: center;
   background-color: #fdcfd2;
-max-width: 70%;
+  max-width: 70%;
   border-radius: 8px;
   padding: 2% 2%;
   margin: 3% 0;
@@ -13,7 +13,7 @@ max-width: 70%;
   height: 2rem;
   background-color: inherit;
   margin-top: -11.1px;
-  margin-right: 1.8rem;
+  margin-left: 1.8rem;
   margin-bottom: 9px;
   border-left: 1rem solid transparent;
   border-right: 1rem solid transparent;
@@ -58,7 +58,7 @@ img {
   height: 2rem;
   background-color: inherit;
   margin-top: -2.1px;
-  margin-right: 1.8rem;
+  margin-left: 1.8rem;
   border-left: 1rem solid transparent;
 	border-right: 1rem solid transparent;
 	border-top: 2rem solid #fdcfd2;
