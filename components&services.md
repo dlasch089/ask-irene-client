@@ -32,6 +32,7 @@ ng g c components/map-spots
 ng g guard guards/require-anon
 ng g guard guards/require-auth
 ng g guard guards/require-admin
+ ng g guard guards/require-me --> so every page knows, if there is a user
 
 ng g c pages/page-login
 ng g c pages/page-signup
