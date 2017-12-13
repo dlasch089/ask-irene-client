@@ -15,6 +15,8 @@ ng g c pages/page-spots
 ng g c pages/page-me
 ng g c pages/page-home
 ng g c pages/page-spot-detail
+ng g c pages/page-about
+ng g c pages/page-contact
 
 ng g c components/spot-list
 ng g c components/spot-list-detail

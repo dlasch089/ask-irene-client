@@ -34,6 +34,8 @@ import { PageSignupComponent } from './pages/page-signup/page-signup.component';
 import { PageMeComponent } from './pages/page-me/page-me.component';
 import { PageSpotDetailComponent } from './pages/page-spot-detail/page-spot-detail.component';
 import { PageHomeComponent } from './pages/page-home/page-home.component';
+import { PageAboutComponent } from './pages/page-about/page-about.component';
+import { PageContactComponent } from './pages/page-contact/page-contact.component';
 
 // Components
 import { FormSelectComponent } from './components/form-select/form-select.component';
@@ -52,12 +54,14 @@ const routes: Routes = [
   {path: '', canActivate: [RequireMeGuard], component: PageHomeComponent},
   {path: 'spots', canActivate: [RequireMeGuard], component: PageSpotsComponent},
   {path: 'spots/:spotId', canActivate: [RequireMeGuard], component: PageSpotDetailComponent},
-  { path: 'auth/login', canActivate: [RequireAnonGuard], component: PageLoginComponent },
-  { path: 'auth/signup', canActivate: [RequireAnonGuard], component: PageSignupComponent },
-  { path: 'auth/me', canActivate: [RequireAuthGuard], component: PageMeComponent },
+  {path: 'auth/login', canActivate: [RequireAnonGuard], component: PageLoginComponent },
+  {path: 'auth/signup', canActivate: [RequireAnonGuard], component: PageSignupComponent },
+  {path: 'auth/me', canActivate: [RequireAuthGuard], component: PageMeComponent },
   {path: 'form', canActivate: [RequireAdminGuard], component: PageFormComponent},
   {path: 'list-all', canActivate: [RequireAdminGuard], component: PageListAllComponent},
-  { path: 'user/me', canActivate: [RequireAuthGuard], component: PageProfileComponent }
+  {path: 'about', canActivate: [RequireMeGuard], component: PageAboutComponent},
+  {path: 'contact', canActivate: [RequireMeGuard], component: PageContactComponent},
+  {path: 'user/me', canActivate: [RequireAuthGuard], component: PageProfileComponent }
 ];
 
 @NgModule({
@@ -81,6 +85,8 @@ const routes: Routes = [
     MapSpotsComponent,
     PageSpotDetailComponent,
     PageProfileComponent,
+    PageAboutComponent,
+    PageContactComponent,
   ],
   imports: [
     BrowserModule,
