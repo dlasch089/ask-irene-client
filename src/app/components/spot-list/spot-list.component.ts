@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Router, ActivatedRoute } from '@angular/router';
+import { Spot } from '../../models/spot';
 
 @Component({
   selector: 'app-spot-list',
@@ -9,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class SpotListComponent implements OnInit {
 
-  @Input() spots: Object;
+  @Input() spots: Array<Spot>;
 
   constructor(router: Router, route: ActivatedRoute,) { }
 

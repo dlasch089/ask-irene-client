@@ -13,9 +13,10 @@ import { Spot } from '../../models/spot';
 })
 export class PageProfileComponent implements OnInit {
 
+
   user: User;
-  favorites: Array<Spot>;
-  wishList: Array<Spot>;
+  favorites = null; 
+  wishList = null;
 
   constructor(
     private userService: UserService,
