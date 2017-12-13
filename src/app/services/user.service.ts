@@ -18,28 +18,31 @@ export class UserService {
 
 
   updateFavs(spotId, user) {
-    const requestOptions = {
+    const requestOptions = { 
       withCredentials: true,
+    };
+    const data = {
       spotId: spotId,
       user: user
     };
-    return this.http.post(apiUrl + `/me/edit/favorites`, requestOptions);
+    return this.http.post(apiUrl + `/me/edit/favorites`, data, requestOptions);
   }
 
   updateWishList(spotId, user) {
     const requestOptions = {
       withCredentials: true,
-      spotId: spotId,
-      user: user
     };
-    return this.http.post(apiUrl + `/me/edit/wishlist`, requestOptions);
+    const data = {
+      spotId: spotId
+    };
+    return this.http.post(apiUrl + `/me/edit/wishlist`, data, requestOptions);
   }
 
+  // User could also be handed in before the requestOptions
   getUserSpots(user): Observable<any> {
     const requestOptions = {
       withCredentials: true,
-      user: user
     };
-    return this.http.post(apiUrl + `/me/get/spots`, requestOptions);
+    return this.http.get(apiUrl + `/me/get/spots`, requestOptions);
   }
 }

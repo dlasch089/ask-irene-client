@@ -30,11 +30,6 @@ export class PageProfileComponent implements OnInit {
       }
       this.user = user;
       this.updateLists(this.user);
-      // this.userService.getUserSpots(this.user)
-      //   .subscribe((data) => {
-      //     this.favorites = data.favorites;
-      //     this.wishList = data.wishList;
-      //   });
     });
   }
 
@@ -62,10 +57,6 @@ export class PageProfileComponent implements OnInit {
         this.updateLists(this.user);
       });
     }
-
-  }
-
-  deleteWishItem(spotId) {
 
   }
 
