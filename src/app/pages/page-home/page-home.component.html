@@ -7,12 +7,10 @@
   </div>
   <div class="body">
     <div class="random bubble">
-      <a [routerLink]="['/spot/random']">Just somewhere 🎲</a>
+      <a (click)='handleRandom()'>Just somewhere 🎲</a>
     </div>
-    <!-- <div class="triangle-two red"></div> -->
     <div class="filters bubble">
       <a [routerLink]="['/spots']">The perfect spot 🎯</a>
     </div>
-    <!-- <div class="triangle-two"></div> -->
   </div>
 </div>
