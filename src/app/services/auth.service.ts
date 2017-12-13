@@ -25,7 +25,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  private setUser(user: User = null) {
+  public setUser(user: User = null) {
     this.loaded = true;
     this.user = user;
     this.userChange.next(user);

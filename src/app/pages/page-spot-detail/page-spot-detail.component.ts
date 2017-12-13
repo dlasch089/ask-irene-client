@@ -21,7 +21,7 @@ export class PageSpotDetailComponent implements OnInit {
 
   user: User;
 
-  addedtoFavorites: Boolean = false;
+  inFavorites: Boolean = false;
 
   constructor(private spotService: SpotService,
     private activatedRoute: ActivatedRoute,
@@ -32,28 +32,43 @@ export class PageSpotDetailComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe((params) => {
       this.spotService.getSpotDetail(params.spotId)
-        .subscribe((data) => this.spot = data);
+        .subscribe((data) => {
+          this.spot = data;
+
+        });
+
+        this.user = this.authService.getUser();
+        console.log(this.user);
+
+        // this.authService.me().then((user) => {
+        //   if (!user) {
+        //     return true;
+        //   }
+        //   this.user = user;
+        // });
+
+        // if (user.favorites.indexOf(data._id) !== -1) {
+        //   this.inFavorites = true;
+        // }
     });
 
-    this.authService.me().then((user) => {
-      if (!user) {
-        return true;
-      }
-      this.user = user;
-    });
+
   }
 
   onFavEdit() {
     this.userService.updateFavs(this.spot._id, this.user)
-      .subscribe((message) => {
-        console.log(message);
+      .subscribe((user: User) => {
+        this.authService.setUser(user);
+        console.log(user);
+        console.log(this.authService.getUser());
       });
-  }
+    }
 
-  onSaveEdit() {
-    this.userService.updateWishList(this.spot._id, this.user)
-    .subscribe((message) => {
-      console.log(message);
+    onSaveEdit() {
+      this.userService.updateWishList(this.spot._id, this.user)
+      .subscribe((user: User) => {
+        this.authService.setUser(user);
+        console.log(user);
     });
   }
 
