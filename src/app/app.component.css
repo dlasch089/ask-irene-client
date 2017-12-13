@@ -31,9 +31,13 @@ a {
   text-decoration: none;
 }
 
+.logo-png {
+  width: 54px;  
+}
+
 img {
-  margin: .8rem .8rem;
-  width: 2rem;
+  margin: .7rem .8rem;
+  width: 35px;
 }
 
 span {
