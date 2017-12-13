@@ -61,6 +61,6 @@ export class PageSpotsComponent implements OnInit {
 
   activateMap() {
     this.mapActive = true;
-    console.log(this.mapActive);
+    // console.log(this.mapActive);
   }
 }

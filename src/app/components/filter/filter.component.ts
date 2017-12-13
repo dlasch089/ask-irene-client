@@ -43,7 +43,7 @@ export class FilterComponent implements OnInit {
 
   handleCheckChange(checkItemStatus) {
     this.flags.push(checkItemStatus);
-    console.log(this.flags);
+    // console.log(this.flags);
   }
 
   // should emit
@@ -61,7 +61,7 @@ export class FilterComponent implements OnInit {
       this.flags[ix].checked = false;
     }
     this.flags = [];
-    console.log(this.flags);
+    // console.log(this.flags);
     this.spotService.getAllSpots()
       .subscribe((data) => {
         this.spots = data;
