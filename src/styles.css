@@ -29,7 +29,11 @@ label, p, a, span {
   color: #f35742;
 }
 
-button {
+button, input {
+  outline: none;
+}
+
+input[type = 'checkbox']:checked {
   outline: none;
 }
 
