@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 import { RequireAuthGuard } from './guards/require-auth.guard';
 import { RequireAnonGuard } from './guards/require-anon.guard';
 import { RequireAdminGuard } from './guards/require-admin.guard';
+import { RequireMeGuard } from './guards/require-me.guard';
 
 // Services
 import { SpotService } from './services/spot.service';
@@ -48,9 +49,9 @@ import { PageProfileComponent } from './pages/page-profile/page-profile.componen
 
 // Routes
 const routes: Routes = [
-  {path: '', component: PageHomeComponent},
-  {path: 'spots', component: PageSpotsComponent},
-  {path: 'spots/:spotId', component: PageSpotDetailComponent},
+  {path: '', canActivate: [RequireMeGuard], component: PageHomeComponent},
+  {path: 'spots', canActivate: [RequireMeGuard], component: PageSpotsComponent},
+  {path: 'spots/:spotId', canActivate: [RequireMeGuard], component: PageSpotDetailComponent},
   { path: 'auth/login', canActivate: [RequireAnonGuard], component: PageLoginComponent },
   { path: 'auth/signup', canActivate: [RequireAnonGuard], component: PageSignupComponent },
   { path: 'auth/me', canActivate: [RequireAuthGuard], component: PageMeComponent },
@@ -103,6 +104,7 @@ const routes: Routes = [
     RequireAuthGuard,
     RequireAnonGuard,
     RequireAdminGuard,
+    RequireMeGuard,
     UserService
   ],
   bootstrap: [AppComponent]
