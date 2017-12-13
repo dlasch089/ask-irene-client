@@ -33,6 +33,15 @@ button {
   outline: none;
 }
 
+app-page-spots,
+app-page-profile,
+app-page-login,
+app-page-signup
+app-page-spot-detail
+app-page-home {
+  min-height: 80vh;
+}
+
 /* -- forms --- error handlers -- */
 
 form {

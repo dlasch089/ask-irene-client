@@ -11,7 +11,11 @@
         <ng-template mat-tab-label>
             <p>💘</p>
         </ng-template>
+
         <app-spot-list [spots]="favorites" class="favorite-list"></app-spot-list>
+        <!-- <div *ngIf='favorites.length === 0'>
+            <p>Add your favorite spots to show them here</p>
+        </div> -->
     </mat-tab>
     
     <mat-tab  label="Wishlist" >
@@ -19,5 +23,8 @@
             <p>📌</p>
         </ng-template>
       <app-spot-list [spots]="wishList" class="wish-list"></app-spot-list>
+      <!-- <div *ngIf='wishList.length === 0'>
+            <p>Add the spots you want to visit to show them here</p>        
+        </div> -->
     </mat-tab>
   </mat-tab-group>
