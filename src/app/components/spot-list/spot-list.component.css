@@ -54,3 +54,7 @@ h2 {
 .no-spot {
   min-height: 60vh;
 }
+
+.delete-icon {
+  font-size: 1.5rem;  
+}

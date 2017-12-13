@@ -29,12 +29,44 @@ export class PageProfileComponent implements OnInit {
         return true;
       }
       this.user = user;
-      this.userService.getUserSpots(this.user)
-        .subscribe((data) => {
-          this.favorites = data.favorites;
-          this.wishList = data.wishList;
-        });
+      this.updateLists(this.user);
+      // this.userService.getUserSpots(this.user)
+      //   .subscribe((data) => {
+      //     this.favorites = data.favorites;
+      //     this.wishList = data.wishList;
+      //   });
     });
+  }
+
+  updateLists(user) {
+    this.userService.getUserSpots(this.user)
+    .subscribe((data) => {
+      this.favorites = data.favorites;
+      this.wishList = data.wishList;
+    });
+  }
+
+  handleDelete(listType, spotId) {
+    if (listType === 'favorites') {
+      console.log('delete from favs!');
+      this.userService.updateFavs(spotId, this.user)
+      .subscribe((message) => {
+        console.log(message);
+        this.updateLists(this.user);
+      });
+    } else {
+      console.log('delete from wishList!');
+      this.userService.updateWishList(spotId, this.user)
+      .subscribe((message) => {
+        console.log(message);
+        this.updateLists(this.user);
+      });
+    }
+
+  }
+
+  deleteWishItem(spotId) {
+
   }
 
 }
