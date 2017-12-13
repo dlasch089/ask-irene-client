@@ -41,8 +41,8 @@ button {
   height: 50px;
   overflow: scroll;
   padding: 1%;
-  margin: 2% 0;
 }
+
 .selected-filters {
   color: #3b5892;
   font-size: 12px;

@@ -1,6 +1,10 @@
 
-<!-- <a [routerLink]="['/spots/spot/:spotId']" (click)="getRandomSpot()">List All</a> -->
-
+ <div class="top">
+    <div class="ask-irene">
+      <h1>Irene, where should I go?</h1>
+    </div>
+    <div class="triangle-one pink"></div>
+  </div>
 <div class="result-button-container" *ngIf='spots'>
   <button (click)="showResults($event)" (click)="filterVisible = !filterVisible" >The perfect spot 🎯</button>
   <span >{{spots.length}}</span>
