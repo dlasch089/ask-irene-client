@@ -19,6 +19,8 @@ export class RequireMeGuard implements CanActivate {
     return this.authService.me().then((user) => {
         if (!user) {
           return true;
+        } else {
+          return true;
         }
     });
   }
