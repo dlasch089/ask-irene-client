@@ -3,6 +3,7 @@
     <div class="spot-info">
       <h2 [routerLink]="['/spots', spot._id]">{{spot.name}}</h2>
       <img [routerLink]="['/spots', spot._id]"src="https://instagram.com/p/{{spot.images[0]}}/media/?size=t" alt="{{spot.name}}">
+      <button (click)="handleDelete(spot._id)" *ngIf="hideButton" class="delete-icon">❌</button>
     </div>
     <div class="triangle-one"></div>
   </div>
