@@ -107,7 +107,7 @@ button.remove {
   padding: 2% 9%;
   margin: 1%;
   color: #f35742;
-  width: 53%;
+  width: 70%;
   text-transform: uppercase;
 }
 
@@ -117,6 +117,10 @@ button.add-btn {
   padding: 2% 9%;
   margin: 1%;
   color: #f35742;
-  width: 53%;
+  width: 70%;
   text-transform: uppercase;
+}
+
+button.not-visible {
+  display:none;
 }
