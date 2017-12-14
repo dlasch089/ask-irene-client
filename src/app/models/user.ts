@@ -6,7 +6,7 @@ export class User {
   image: string;
   role: Array<string>;
   favorites: Array<string>;
-  wishlist: Array<string>;
+  wishList: Array<string>;
 
   // Ask Andre about this:
   constructor(obj: Object = {}) {

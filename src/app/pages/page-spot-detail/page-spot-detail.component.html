@@ -32,9 +32,8 @@
 </div>
 
 <div class="add-buttons-container">
-  <div class="inFavorites" *ngIf="inFavorites"><p>Its in the faves!</p> </div>
-    <button class="add-btn" (click)="onFavEdit()">add to favs 💘</button>
-    <button class="add-btn" (click)="onSaveEdit()">Add to WishList</button>
+    <button [ngClass]="inFavorites ? 'remove' : 'add-btn'" (click)="onFavEdit()">favorites 💘</button>
+    <button [ngClass]="inWishList ? 'remove' : 'add-btn'" (click)="onSaveEdit()">wishlist 📌</button>
 </div>
 
 <div class="back-button-container">

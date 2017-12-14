@@ -101,12 +101,22 @@ a.take-me-there-btn {
   margin: 2% 0;
 }
 
-button.add-btn {
+button.remove {
   background-color: #fdcfd2;
-  border: none;
+  border: 1px solid #fdcfd2;
   padding: 2% 9%;
   margin: 1%;
   color: #f35742;
-  max-width: 50%;
+  width: 53%;
+  text-transform: uppercase;
+}
+
+button.add-btn {
+  background-color: transparent;
+  border: 1px solid #f35742;
+  padding: 2% 9%;
+  margin: 1%;
+  color: #f35742;
+  width: 53%;
   text-transform: uppercase;
 }
