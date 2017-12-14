@@ -32,10 +32,10 @@
 </div>
 
 <div class="add-buttons-container" *ngIf="user">
-    <button [ngClass]="inFavorites ? 'add-btn' : 'not-visible'" (click)="onFavEdit()">add to favorites 💘</button>
-    <button [ngClass]="!inFavorites ? 'remove' : 'not-visible'" (click)="onFavEdit()">remove from favorites 🙅‍</button>
-    <button [ngClass]="inWishList ? 'add-btn' : 'not-visible'" (click)="onSaveEdit()">add to wishlist 📌</button>
-    <button [ngClass]="!inWishList ? 'remove' : 'not-visible'" (click)="onSaveEdit()">remove from wishlist 🙅‍</button>
+    <button [ngClass]="!inFavorites ? 'add-btn' : 'not-visible'" (click)="onFavEdit()">add to favorites 💘</button>
+    <button [ngClass]="inFavorites ? 'remove' : 'not-visible'" (click)="onFavEdit()">remove from favorites 🙅‍</button>
+    <button [ngClass]="!inWishList ? 'add-btn' : 'not-visible'" (click)="onSaveEdit()">add to wishlist 📌</button>
+    <button [ngClass]="inWishList ? 'remove' : 'not-visible'" (click)="onSaveEdit()">remove from wishlist 🙅‍</button>
 </div>
 
 <div class="back-button-container">

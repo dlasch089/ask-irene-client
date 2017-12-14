@@ -58,7 +58,7 @@ export class PageSpotsComponent implements OnInit {
     if (this.resultVisible) {
       this.resultVisible = false;
       // this.filterVisible = true;
-      event.srcElement.innerHTML = `Show results: `;
+      event.srcElement.innerHTML = `Show results `;
     } else {
       this.resultVisible = true;
       // this.filterVisible = false;
