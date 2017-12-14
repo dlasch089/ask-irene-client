@@ -53,24 +53,42 @@ h2 {
 
 .links a {
   color: #fdcfd2;
-  font-size: 2rem;
+  font-size: 1.7rem;
   text-decoration: none;
 }
 
 .links {
-  border-radius: 8px;
-  width: 60%;
-  margin: 5%;
-  background-color: #f35742;
-  padding: 20px;
+  /* border-radius: 8px;
+  min-height: 9vh;
+  padding: 7% 10%;
+  margin-bottom: 5%;
+  background-color: #f35742; */
 }
 
 .answer-links {
+  width: 75%;
   display: flex;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
-  align-items: center;
-  /* width: 25%; */
-  margin: 0 0 10% 10%;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin-bottom: 10%;
+}
+
+img {
+  width: 50px;
+  margin-left: 10%;
+}
+
+.medium {
+  width: 60px;
+}
+
+p {
+  font-size: 20px;
+  margin: 7% 9%;
+  color: #365897;
 }
 
 .triangle-answer {
