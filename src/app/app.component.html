@@ -21,7 +21,7 @@
         </div>
 
         <button mat-menu-item [routerLink]="['/spots']">
-            <a >Spots</a>              
+            <a >The Perfect Spot</a>              
         </button>
 
         <div *ngIf="!loading && anon">
@@ -43,10 +43,10 @@
 
         <div *ngIf="!loading && admin">
           <button mat-menu-item (click)="goToForm()">
-            <a >Add a new spot</a>
+            <a >Add A New Spot</a>
           </button>
           <button mat-menu-item (click)="goToList()">
-            <a >List all spots</a>
+            <a >List All Spots</a>
           </button>
         </div>
       </mat-menu>
