@@ -36,6 +36,11 @@ h2 {
   margin-bottom: 0px;
 }
 
+a {
+  color: #365897;
+  text-decoration: none;
+}
+
 .no-spot {
   min-height: 60vh;
 }
