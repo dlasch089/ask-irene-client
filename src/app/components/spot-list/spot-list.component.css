@@ -43,3 +43,15 @@ h2 {
 .delete-icon {
   font-size: 1.5rem;  
 }
+
+.remove-button {
+    background-color: #f35742;
+    color: #f9eee4;
+    text-decoration: none;
+    padding: 2% 9%;
+    border-radius: 8px;
+    margin: 3% 0;
+    text-transform: uppercase;
+    border:none;
+    margin-left: 4%;
+}
