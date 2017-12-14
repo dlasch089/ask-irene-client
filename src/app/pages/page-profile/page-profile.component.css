@@ -8,6 +8,7 @@ p {
   background-color: #fdcfd2;
   border-radius: 8px;
   margin: 6% 0;
+
 }
 
 .ask-irene p {
@@ -16,6 +17,8 @@ p {
   font-family: 'Abril Fatface', cursive;
   color: #365897;
   font-size: 1.5rem;
+  overflow: overlay;
+  text-overflow: ellipsis;
 }
 
 .ask-irene h3 {
