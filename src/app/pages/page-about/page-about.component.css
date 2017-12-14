@@ -44,9 +44,10 @@ h2 {
   background-color: #fdcfd2;
   margin: 20px 0 0px 10px;
   padding: 10px 20px 0 21px;
-  
 }
-
+.answer p {
+  color: #365897;
+}
 .triangle-answer {
   height: 30px;
   width: 30px;
@@ -63,5 +64,5 @@ img {
 }
 
 span {
-  color: #365897;
+  color: #f35742;
 }

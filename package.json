@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "ng serve --aot",
     "heroku-prebuild": "rm -rf node_modules && npm cache clean --force",
-    "postinstall": "ng build --aot -prod",
+    "postinstall": "ng build --prod",
     "start": "node app.js"
   },
   "private": true,

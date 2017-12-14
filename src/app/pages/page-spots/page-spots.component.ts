@@ -20,12 +20,13 @@ export class PageSpotsComponent implements OnInit {
   filterReady = false;
   selectors = null;
   mapActive = false;
+  message: String = 'Wow! You’re such a hipster that no places like this exist yet! But you know which spot is truly worth trying? ';
 
   resultVisible = false;
   filterVisible = true;
 
   constructor(
-    private spotService: SpotService, 
+    private spotService: SpotService,
     private selectorService: SelectorService,
     private authService: AuthService
   ) { }

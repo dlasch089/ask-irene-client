@@ -12,6 +12,7 @@ export class SpotListComponent implements OnInit {
 
   @Input() spots: Array<Spot>;
   @Input() hideButton: Boolean = false;
+  @Input() message: String;
   @Output() onDelete = new EventEmitter<String>();
 
   constructor(router: Router, route: ActivatedRoute,) { }
