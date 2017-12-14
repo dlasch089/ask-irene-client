@@ -12,12 +12,15 @@ export class SpotListComponent implements OnInit {
 
   @Input() spots: Array<Spot>;
   @Input() hideButton: Boolean = false;
-  @Input() message: String;
+  @Input() message: Array<string>;
   @Output() onDelete = new EventEmitter<String>();
+
+  customMessage: String = '';
 
   constructor(router: Router, route: ActivatedRoute,) { }
 
   ngOnInit() {
+    this.customMessage = this.message[Math.floor(Math.random()*this.message.length)]
   }
 
   handleDelete(spotId) {

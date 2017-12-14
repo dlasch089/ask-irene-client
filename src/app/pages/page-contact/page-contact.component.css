@@ -1,8 +1,7 @@
 .contact-container {
-  /* display: flex;
-  flex-direction: column; */
-  width: 95vw;
+  width: 90vw;
   height: 80vh;
+  margin: 0 auto
 }
 
 .question-container {
@@ -18,6 +17,7 @@
   max-width: 75%;
   border-radius: 8px;
   background-color: #fdcfd2;
+  padding-left: 20px;
 }
 
 h2 {

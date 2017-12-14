@@ -34,6 +34,8 @@ label, p, a, span {
 }
 
 button, input {
+  font-family: 'Poppins';
+  border-radius: 8px;
   outline: none;
 }
 

@@ -20,7 +20,13 @@ export class PageSpotsComponent implements OnInit {
   filterReady = false;
   selectors = null;
   mapActive = false;
-  message: String = 'Wow! You’re such a hipster that no places like this exist yet! But you know which spot is truly worth trying? ';
+  message: Array<string> = [
+    'Wow! You’re such a hipster that no places like this exist yet! But you know which spot is truly worth trying? ',
+    'Sorry! There are no places like the one you’re looking for in my database 💔 But have you tried ',
+    'Looking for something really specific, aren’t you? Try removing a few filters or jsut go to ',
+    'We couldn’t find the place you’re looking for but here’s another spot that can take care of your hunger: ',
+    'Turns out what you’re looking for is not here — yet 🔮 But did I tell you about '
+];
 
   resultVisible = false;
   filterVisible = true;
