@@ -1,12 +1,12 @@
 
  <div class="top">
     <div class="ask-irene">
-      <h1>Irene, where should I go?</h1>
+      <p>Tell me what you're looking for and I'll find the perfect spot for you.</p>
     </div>
     <div class="triangle-one pink"></div>
   </div>
 <div class="result-button-container" *ngIf='spots'>
-  <button (click)="showResults($event)" (click)="filterVisible = !filterVisible" >The perfect spot 🎯</button>
+  <button (click)="showResults($event)" (click)="filterVisible = !filterVisible" >Find The perfect spot 🎯</button>
   <span >{{spots.length}}</span>
 </div>
 <div class="results" *ngIf="resultVisible">
