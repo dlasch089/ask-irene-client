@@ -72,6 +72,10 @@ body {
 	border-top: 2rem solid #f35742;
 }
 
+button {
+  border: none;   
+}
+
 
 
 
