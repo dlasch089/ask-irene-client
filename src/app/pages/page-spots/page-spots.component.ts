@@ -62,7 +62,7 @@ export class PageSpotsComponent implements OnInit {
     } else {
       this.resultVisible = true;
       // this.filterVisible = false;
-      event.srcElement.innerHTML = 'Edit filters';
+      event.srcElement.innerHTML = 'Edit filters 🤔';
     }
   }
 
