@@ -7,18 +7,18 @@
 
 .spot-info {
   width: 75%;
-  padding: 2px 1rem;
+  padding: 6%;
   background-color: #fdcfd2;
   border-radius: 8px;
   width: 75%;
-  margin: 5% 0 2% 0;
+  margin: 5% 0 2% 0
 }
 
 .triangle-one {
   height: 30px;
   width: 30px;
   background-color: #fdcfd2;
-  margin-top: -10px;
+  margin-top: -7px;
   margin-left: 30px;
   border-left: 15px solid #f9eee4;
   border-right: 15px solid #f9eee4;
@@ -33,7 +33,7 @@ img {
 }
 
 h2 {
-  margin-bottom: 0px;
+  margin: 0px;
 }
 
 a {
@@ -49,13 +49,13 @@ a {
 }
 
 .remove-button {
-    background-color: #f35742;
-    color: #f9eee4;
-    text-decoration: none;
-    padding: 2% 9%;
-    border-radius: 8px;
-    margin: 3% 0;
-    text-transform: uppercase;
-    border:none;
-    margin: 0 4% 4%;
+  background-color: transparent;
+  color: #f35742;
+  text-decoration: none;
+  padding: 2% 9%;
+  border-radius: 8px;
+  margin: 3% 0;
+  text-transform: uppercase;
+  border: solid 1px #f35742;
+  margin: 0 4% 4%;
 }
