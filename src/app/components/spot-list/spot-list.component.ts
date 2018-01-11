@@ -17,10 +17,10 @@ export class SpotListComponent implements OnInit {
 
   customMessage: String = '';
 
-  constructor(router: Router, route: ActivatedRoute,) { }
+  constructor(router: Router, route: ActivatedRoute, ) { }
 
   ngOnInit() {
-    this.customMessage = this.message[Math.floor(Math.random()*this.message.length)]
+    this.customMessage = this.message[Math.floor(Math.random() * this.message.length)];
   }
 
   handleDelete(spotId) {
