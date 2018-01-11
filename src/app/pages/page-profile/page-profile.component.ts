@@ -18,8 +18,7 @@ export class PageProfileComponent implements OnInit {
   favorites: Array<Spot> = null;
   wishList: Array<Spot> = null;
   message: Array<string> = [
-    'Add places to your favorites to show them here! Or just go to ',
-    'Add places to your wishlist to show them here! Or just go to '
+    'Add places to your wishlist/favorites to show them here! Or just go to '
   ];
 
 
