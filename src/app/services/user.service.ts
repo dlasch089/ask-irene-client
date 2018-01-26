@@ -18,7 +18,7 @@ export class UserService {
 
 
   updateFavs(spotId, user) {
-    const requestOptions = { 
+    const requestOptions = {
       withCredentials: true,
     };
     const data = {
