@@ -98,7 +98,7 @@ const routes: Routes = [
     MatMenuModule,
     BrowserAnimationsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCw7VtAVg6y_TSdQcFVB_dbcnnS15Vp4u0',
+      apiKey: 'AIzaSyC-SctKNkfxfSUUktaLrTIU0bMxXxsFcyI',
       libraries: ['places']
     }),
     ReactiveFormsModule
@@ -116,4 +116,3 @@ const routes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
