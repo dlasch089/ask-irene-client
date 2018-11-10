@@ -265,7 +265,7 @@ export class MapSpotsComponent implements OnInit {
     }
   ];
 
-  // public customIcon = 'https://png.icons8.com/?id=30568&size=50';
+  public customIcon = 'https://png.icons8.com/?id=30568&size=50';
 
   constructor() { }
 
